@@ -1,0 +1,38 @@
+{
+ "classes": 666,
+ "bins": 149184,
+ "calls": 666,
+ "inventory_per_call": {
+  "4": 26,
+  "5": 9,
+  "7": 62,
+  "8": 78,
+  "9": 240
+ },
+ "window_lp_excess_per_call": 275.0097,
+ "window_lp_idle_per_call": {
+  "1": 26.1712,
+  "3": 9.9341,
+  "5": 7.7485,
+  "7": 0.2553,
+  "48": 39.8437
+ },
+ "shipped_excess_per_call": 275.0264,
+ "shipped_idle": {
+  "1": 17428,
+  "3": 6614,
+  "5": 5163,
+  "7": 170,
+  "39": 1,
+  "48": 26535
+ },
+ "time_free_note": "time-free pattern optimum of this inventory: 271.593 per call (PR2679 new/borrow-fill/search/ceil74.py class ceiling 0.00171514043461)",
+ "lp_size": {
+  "rows": 7326,
+  "columns": 681473,
+  "nonzeros": 1669824
+ },
+ "seconds": 526.1,
+ "reading": "shipped_excess - window_lp_excess is all a fill of this order can still gain; window_lp_excess - 271.593 is what only a different order can gain",
+ "order": "PR2679's order (key 4*stage + replica) and fill"
+}

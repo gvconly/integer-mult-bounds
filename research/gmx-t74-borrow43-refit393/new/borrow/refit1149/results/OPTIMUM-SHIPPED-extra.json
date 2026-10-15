@@ -1,0 +1,37 @@
+{
+ "word": "BORROW-WORD-43extra.json.gz",
+ "given_profile": {
+  "1": 2372,
+  "2": 647,
+  "3": 297,
+  "4": 120,
+  "5": 26,
+  "7": 8
+ },
+ "optimum_profile": {
+  "1": 2372,
+  "2": 647,
+  "3": 297,
+  "4": 120,
+  "5": 26,
+  "7": 8
+ },
+ "given_excess": 17359.8677,
+ "optimum_excess": 17359.8677,
+ "gain_excess": 0.0,
+ "free_gate_nodes": 928,
+ "components": 196,
+ "largest_component": 188,
+ "free_ends": false,
+ "free_warps": false,
+ "inventory": {
+  "4": 26,
+  "5": 9,
+  "7": 62,
+  "8": 78,
+  "9": 240
+ },
+ "minimal_changes": [],
+ "seconds": 2.4,
+ "objective": "first-order excess moment sum_d c_d d((73/d)^b - (73/48)^b), b = 0.001715; exact per component (HiGHS MILP, local polytope)"
+}
