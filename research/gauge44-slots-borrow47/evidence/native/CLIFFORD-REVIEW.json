@@ -1,0 +1,23 @@
+{
+  "status": "PASS_NEW_WORD_EXACT_LOCAL_PHASE_RECIPES",
+  "canonical_word_sha256": "0a70d8246106fa993f5f9cf4e4edefddc584a463e36e8627cb80c2e9ea2d6665",
+  "frames": 1008,
+  "directed_edges": 2887,
+  "ranks": {
+    "1": 1932,
+    "2": 380,
+    "3": 403,
+    "8": 16,
+    "4": 122,
+    "5": 34,
+    "warp": 94
+  },
+  "endpoint_adapters": 224,
+  "warp_recipes": 94,
+  "warp_recipes_rank_zero": true,
+  "warp_recipes_equal_exact_512_column_product": true,
+  "all_child_equalities_include_global_phase": true,
+  "recipe_sha256": "153b86049998f02a469a203a51b8a9625c1c9f5932f532fb2d3afd8ab6521cd0",
+  "seconds": 166.61241668000002,
+  "scope": "Every local frame, centre transition and warp. Expanded scalar-interface integration and global emitted program are separate obligations."
+}

@@ -1,0 +1,44 @@
+{
+  "status": "CONTROL_BORROW_AWARE_CODE_REPRODUCES_ARCFLOW_KAPPA_AT_T8",
+  "kappa_decimal": "0.001674083482880778",
+  "complex_decimal": "0.001676890737967805674397",
+  "conservative_kappa_decimal": "0.001674083480027597",
+  "arcflow_pinned_kappa_decimal": "0.001674083482880778",
+  "equal": true,
+  "data": "research/gauge44-slots-arcflow data/PLAN.json and data/OWNERS.json.gz, unchanged (sha256 c76233ac50c5ec84458ff26b63c49f3811e8020ce5e4da299bb15936153e18e4, f5794e77a49da4bd47affa5f75d57211be21d0b79a3f9f33bf4aa5a8813fbfb7)",
+  "code": "this package code/ (research/gmx-t74-borrow43-handoff/code) with this package verify_global.py; SPEC = arcflow data/SPEC.json plus the geometry and outer_refinement of this package data/SPEC.json",
+  "locals": "fresh rebuild of research/gauge44-slots-arcflow native locals (whole-head run of the #1175 head 007a7c64); byte-stable artifacts equal arcflow PLAN pins: {\"LOCAL-CHECKS.json\": \"2b8b1891a736598010232bfb26abc31973b265a53a2009a3fcfd9138b5ecadb4\", \"CLIFFORD-RECIPES.json\": \"d0768f2164d5f64a2fdbec422f1cfde4e400818792f1904ca541958377243731\", \"RESIDUAL-ADAPTERS.json\": \"383f40aadd00a4ac700dfd0d4c22d6c6c0be9a9863116e4d69c7acd23bafae0c\", \"CANONICAL-WORD.json.gz\": \"16bc0ebb04b4be6c0ade74badc6a0c0cdba4215eda86e4ff9f13abf8ecebd219\"}",
+  "mode": "discovery (no SPEC pins compared) without controller mutation controls: two of them (omit private zero buffers, private buffer aliases data) need a word that has zero buffers and are accepted vacuously on the zero-buffer-free arcflow word",
+  "stages": [
+    {
+      "name": "restore-parent",
+      "seconds": 1.5,
+      "exit_code": 0
+    },
+    {
+      "name": "bind",
+      "seconds": 0.31,
+      "exit_code": 0
+    },
+    {
+      "name": "emit",
+      "seconds": 3.848,
+      "exit_code": 0
+    },
+    {
+      "name": "audit",
+      "seconds": 2.326,
+      "exit_code": 0
+    },
+    {
+      "name": "invoice",
+      "seconds": 0.979,
+      "exit_code": 0
+    },
+    {
+      "name": "assembly",
+      "seconds": 0.618,
+      "exit_code": 0
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "name": "manifest",
+    "exit_code": 0,
+    "seconds": 0.032,
+    "log_sha256": "1ac3a64926a9f3f45a8181916df152d8ec2e42d221d893b22ed5eb01766aadea"
+  },
+  {
+    "name": "witness",
+    "exit_code": 0,
+    "seconds": 7.065,
+    "log_sha256": "16ba0f7de99f5cf209ea8bf5455815adb30d40ee0cc8248e1e81ebd564ac53c3"
+  },
+  {
+    "name": "word",
+    "exit_code": 0,
+    "seconds": 9.181,
+    "log_sha256": "1abc81a1cad282799f76c3902ac0234548df823339c027bf0fdc0af47bc95012"
+  },
+  {
+    "name": "native",
+    "exit_code": 0,
+    "seconds": 205.205,
+    "log_sha256": "7bce7eb64d6cd4b48d13b25a2fedc342def958b970e0cc36d971cff75c50a0c8"
+  },
+  {
+    "name": "plan",
+    "exit_code": 0,
+    "seconds": 0.242,
+    "log_sha256": "3a148570733b1581e7abf3360449dbf5dd6dc39bb615bad17cc31a6880c37852"
+  },
+  {
+    "name": "recount",
+    "exit_code": 0,
+    "seconds": 0.213,
+    "log_sha256": "c1ba97a5ef92b26972cdf9f54810a64d8fa67a7c9308a64b6dc8fb0c6fe68ea0"
+  },
+  {
+    "name": "strict",
+    "exit_code": 0,
+    "seconds": 29.82,
+    "log_sha256": "a272d43b8b392e00cfbfc1a0b8dfd2fa3a4ee56bf5775d1bb2fc626fbd41805d"
+  },
+  {
+    "name": "independent",
+    "exit_code": 0,
+    "seconds": 0.622,
+    "log_sha256": "cfbabe27bfaf0cfe7a09a3f05c68fe82a1f4a73b09f3fe2869e7c8169ca2db2d"
+  }
+]
