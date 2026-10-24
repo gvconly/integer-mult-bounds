@@ -1,0 +1,16 @@
+p=2 collapsed: uncoded listing letter=D idle=formal formal_bridges=False vs invoiced formal controller: residual 80
+p=2 collapsed: uncoded listing letter=D idle=formal formal_bridges=True  vs invoiced formal controller: residual 0
+p=2 collapsed: uncoded listing letter=R idle=R      formal_bridges=False vs invoiced formal controller: residual 258
+p=2 collapsed: uncoded listing letter=R idle=R      formal_bridges=True  vs invoiced formal controller: residual 211
+p=2 fresh    : uncoded listing letter=D idle=formal formal_bridges=False vs invoiced formal controller: residual 80
+p=2 fresh    : uncoded listing letter=D idle=formal formal_bridges=True  vs invoiced formal controller: residual 0
+p=2 fresh    : uncoded listing letter=R idle=R      formal_bridges=False vs invoiced formal controller: residual 252
+p=2 fresh    : uncoded listing letter=R idle=R      formal_bridges=True  vs invoiced formal controller: residual 215
+p=3 collapsed: uncoded listing letter=D idle=formal formal_bridges=False vs invoiced formal controller: residual 200
+p=3 collapsed: uncoded listing letter=D idle=formal formal_bridges=True  vs invoiced formal controller: residual 0
+p=3 collapsed: uncoded listing letter=R idle=R      formal_bridges=False vs invoiced formal controller: residual 527
+p=3 collapsed: uncoded listing letter=R idle=R      formal_bridges=True  vs invoiced formal controller: residual 377
+p=3 fresh    : uncoded listing letter=D idle=formal formal_bridges=False vs invoiced formal controller: residual 200
+p=3 fresh    : uncoded listing letter=D idle=formal formal_bridges=True  vs invoiced formal controller: residual 0
+p=3 fresh    : uncoded listing letter=R idle=R      formal_bridges=False vs invoiced formal controller: residual 551
+p=3 fresh    : uncoded listing letter=R idle=R      formal_bridges=True  vs invoiced formal controller: residual 406

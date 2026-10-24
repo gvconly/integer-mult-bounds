@@ -1,0 +1,8 @@
+signed map inverse=False match: True
+signed map inverse=True match: True
+R match True
+Q^-1 match True
+C match True
+C^-1 match True
+p=2: my coded == their coded: True | my standard == their standard: True | their coded vs standard residual 0 | mine 0
+p=3: my coded == their coded: True | my standard == their standard: True | their coded vs standard residual 0 | mine 0

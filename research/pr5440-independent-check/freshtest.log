@@ -1,0 +1,22 @@
+collapsed controls:
+  p=2 collapsed letter=R idle=R residual=0
+  p=2 collapsed letter=D idle=R residual=17947
+  p=2 collapsed letter=R idle=formal residual=8708
+  p=2 collapsed letter=D idle=formal residual=21604
+  p=3 collapsed letter=R idle=R residual=0
+  p=3 collapsed letter=D idle=R residual=30301
+  p=3 collapsed letter=R idle=formal residual=27962
+  p=3 collapsed letter=D idle=formal residual=53945
+fresh-block geometry (central axis + one 8-axis block per retained stage):
+  p=2 fresh letter=R idle=R      codes=own pair block       residual=236494 (uncoded output: 448 nonzero entries)
+  p=2 fresh letter=R idle=R      codes=all codes on block 0 residual=23684 (uncoded output: 448 nonzero entries)
+  p=2 fresh letter=R idle=formal codes=own pair block       residual=134972 (uncoded output: 394 nonzero entries)
+  p=2 fresh letter=R idle=formal codes=all codes on block 0 residual=9502 (uncoded output: 394 nonzero entries)
+  p=2 fresh letter=D idle=formal codes=own pair block       residual=213793 (uncoded output: 360 nonzero entries)
+  p=2 fresh letter=D idle=formal codes=all codes on block 0 residual=9325 (uncoded output: 360 nonzero entries)
+  p=3 fresh letter=R idle=R      codes=own pair block       residual=835320 (uncoded output: 913 nonzero entries)
+  p=3 fresh letter=R idle=R      codes=all codes on block 0 residual=56734 (uncoded output: 913 nonzero entries)
+  p=3 fresh letter=R idle=formal codes=own pair block       residual=523812 (uncoded output: 772 nonzero entries)
+  p=3 fresh letter=R idle=formal codes=all codes on block 0 residual=33414 (uncoded output: 772 nonzero entries)
+  p=3 fresh letter=D idle=formal codes=own pair block       residual=735097 (uncoded output: 709 nonzero entries)
+  p=3 fresh letter=D idle=formal codes=all codes on block 0 residual=19288 (uncoded output: 709 nonzero entries)

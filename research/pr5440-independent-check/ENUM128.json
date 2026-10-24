@@ -1,0 +1,38 @@
+{
+ "invoiced semantics (D, formal idles, formal bridges)": {
+  "assignments": 128,
+  "completed": 102,
+  "timeouts": 26,
+  "zero_residual": 0,
+  "min_residual": 3741,
+  "argmin": [
+   0,
+   1,
+   0,
+   0,
+   1,
+   1,
+   1,
+   0,
+   1
+  ]
+ },
+ "PR5440 listing semantics (R, nine-axis idles, its bridges)": {
+  "assignments": 128,
+  "completed": 128,
+  "timeouts": 0,
+  "zero_residual": 0,
+  "min_residual": 4436,
+  "argmin": [
+   0,
+   0,
+   0,
+   0,
+   1,
+   1,
+   1,
+   0,
+   1
+  ]
+ }
+}
