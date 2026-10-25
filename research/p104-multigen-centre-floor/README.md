@@ -32,7 +32,10 @@ So a root-code P104 centre below 56 needs **at least two independent content dir
 All finite facts are recomputed exactly from the published word (integers and Fractions):
 - **Realisation.** The integral E8 realisation: the eight centre contents form a Z-basis.
 - **Lemmas.** The capacities, the |T_z| ≥ 49 census (13,320 lattice vectors and 3,360 A2 continua), the two-plane lemma (4,016 candidate sets against 43,435 planes), and the A2 check.
-- **Controls.** The selected word is tight. A genuinely multi-generation centre of cost 56 (four coupled pairs) satisfies all 104 ports and has R_8 = 8, as Theorem A requires.
+- **Controls.** All three designs below satisfy all 104 ports, so 56 is attained in very different profiles.
+  - The selected word is tight in the master inequality.
+  - A genuinely multi-generation centre of cost 56 (four coupled pairs) has R_8 = 8, as Theorem A requires.
+  - A centre of cost 56 in which **no content ever reaches a line** (R_8 = 0) also exists. Each content lands on a plane inside its copy frame (rank 6), then rotates through a 3-dimensional frame onto a second plane meeting the first in its frame-pair line (rank 1).
 
 The full argument is in [PROOF.md](PROOF.md).
 
@@ -64,7 +67,7 @@ The verifier:
 
 **The shallow covering problem** (PROOF.md §4). Let Z = (V'_8)^⊥, with dim Z = s. Choose pairs (β_j ∈ Z, frame F_j of level ≤ 7) such that proj_Z(r_p) ∈ span{β_j : p ∈ world(F_j)} for every port.
 - Show the number of pairs is ≥ Σ_i (9 − max(δ_i, 2)) over the shallow directions i.
-- At every δ_i = 7 this means at least 2s pairs.
+- At every δ_i = 7 this means at least 2s pairs. The all-planes control is a solution with s = 8 and exactly 16 pairs, so the question there is precisely whether **15 plane-level deliveries** can serve all ports.
 - A proof closes the root-code centre at 56. A counterexample, if it survives the availability of its contents, is a sub-56 centre.
 - The Singleton-type argument gives only s + 1. A plane-level analogue of Theorem 4 seems to be needed.
 

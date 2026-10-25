@@ -128,6 +128,8 @@ This is checked for all 511 hyperplanes. Smaller frames lie in at least three hy
 - One must show the number of pairs is ≥ Σ_i (9 − max(δ_i, 2)) over the shallow directions i.
 - Choosing z orthogonal to s − 1 of the β's gives only the Singleton-type bound s + 1, while 2s is needed even when every δ_i = 7.
 
+**The open profiles are not empty at 56.** verify.py checks a centre with R_8 = 0 and cost 56. Content x_j lands at a plane P_j inside ℓ_{x_j}^⊥ (rank 6) and then at a plane P'_j with P_j ∩ P'_j = [ℓ_{y_j}] (rank 1). The worlds of P_j and P'_j cover the 52 needers of x_j: these are the two-plane covers of Lemma 6. In the shallow covering problem this is a solution with s = 8 and 16 pairs. Beating 56 in that profile needs 15.
+
 **Recorded data.**
 - A live root's T is not covered by three 3-dimensional frames.
 - A removed root's T is.

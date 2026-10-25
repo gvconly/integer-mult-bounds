@@ -108,6 +108,29 @@ def multigen_design(G):
             'landing_dims': sorted(len(Gf) for _, Gf in deliveries), 'R8_rank_at_lines': floor.qrank(G, line_level)}
 
 
+ALL_PLANES = [((1, 6), (7, 505)), ((1, 24), (25, 487)), ((1, 52), (52, 458)), ((2, 80), (82, 431)),
+              ((1, 490), (21, 491)), ((1, 448), (62, 448)), ((2, 65), (67, 446)), ((3, 137), (137, 373))]
+
+
+def all_planes_design(G):
+    """Control: a centre of cost 56 in which no content reaches a line (R_8 = 0, all eight directions shallow at level 7).
+    Content x_j lands at plane P_j inside its copy frame (rank 6), climbs to P_j + P'_j (3-dim, free) and lands at
+    P'_j (rank 1).  P_j and P'_j meet in the frame-pair line [g_j]."""
+    mask = floor.perp_masks(G)
+    deliveries = []
+    for j, (P, P2) in enumerate(ALL_PLANES):
+        h = G.label(unit(j))
+        e1, e2 = {P[0], P[1], P[0] ^ P[1]}, {P2[0], P2[1], P2[0] ^ P2[1]}
+        assert all(par(x & h) == 0 for x in e1)                    # first landing inside the copy frame h_j^perp
+        assert e1 & e2 == {G.lives[j]['landing'][0]} and len(f2span(list(e1 | e2))) == 3
+        deliveries += [(unit(j), mask[P[0]] & mask[P[1]]), (unit(j), mask[P2[0]] & mask[P2[1]])]
+    ok = 0
+    for p in range(G.P):
+        vecs = [v for v, w in deliveries if w >> p & 1]
+        ok += floor.qrank(G, vecs + [G.roots[p]]) == floor.qrank(G, vecs)
+    return {'cost': 8 * (6 + 1), 'ports_satisfied': ok, 'plane_deliveries': len(deliveries), 'R8_rank_at_lines': 0}
+
+
 def theorem_b(m):
     rows = {}
     for d in range(1, 8):
@@ -170,6 +193,9 @@ def main():
     md = multigen_design(G)
     res['control_multigen_design'] = md
     assert md['cost'] == 56 and md['ports_satisfied'] == 104 and md['R8_rank_at_lines'] == 8
+    ap = all_planes_design(G)
+    res['control_all_planes_design'] = ap
+    assert ap['cost'] == 56 and ap['ports_satisfied'] == 104
     path = HERE / 'RESULT.json'
     text = json.dumps(res, indent=1, sort_keys=True) + '\n'
     if '--write' in sys.argv:

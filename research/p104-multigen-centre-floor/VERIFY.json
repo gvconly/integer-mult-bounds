@@ -15,7 +15,7 @@
         "{package}/verify.py"
       ],
       "timeout_seconds": 600,
-      "checks": "word replay of the eight owned centre lifetimes; integral E8 realisation (Gram unique, det 1), 120 lines, two removed frames, label dictionary; Lemma 1 good ports, Lemma 2 sources (511 hyperplanes), capacities m_d (all subspaces of F2^9), |T_z| >= 49 (13,320 lattice vectors, 3,360 A2 continua), two-plane lemma (4,016 sets x 43,435 planes), no A2 among removed roots, Theorem B/C arithmetic; controls: selected word tight, explicit multi-generation centre of cost 56 with R_8 = 8; RESULT.json equality"
+      "checks": "word replay of the eight owned centre lifetimes; integral E8 realisation (Gram unique, det 1), 120 lines, two removed frames, label dictionary; Lemma 1 good ports, Lemma 2 sources (511 hyperplanes), capacities m_d (all subspaces of F2^9), |T_z| >= 49 (13,320 lattice vectors, 3,360 A2 continua), two-plane lemma (4,016 sets x 43,435 planes), no A2 among removed roots, Theorem B/C arithmetic; controls: selected word tight, explicit multi-generation centre of cost 56 with R_8 = 8, and a cost-56 centre with R_8 = 0 (all contents on planes); RESULT.json equality"
     }
   ]
 }

@@ -133,6 +133,12 @@
   "owned_lifetimes": 8,
   "ports_with_exact_frame_pair_support": 104
  },
+ "control_all_planes_design": {
+  "R8_rank_at_lines": 0,
+  "cost": 56,
+  "plane_deliveries": 16,
+  "ports_satisfied": 104
+ },
  "control_multigen_design": {
   "R8_rank_at_lines": 8,
   "cost": 56,
