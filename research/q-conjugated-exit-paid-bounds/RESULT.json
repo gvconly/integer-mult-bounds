@@ -29,6 +29,16 @@
   "forced_share_of_allowance": "210/229",
   "idles_disjoint_from_own_FULL_stages": 15,
   "in_sector_required_calls_15_retirements": 1800,
+  "kappa_census_exit_words": {
+   "G": {
+    "diag_kappa_0": 8,
+    "off_kappa_2": 6720
+   },
+   "G_inverse_transpose": {
+    "diag_kappa_0": 8,
+    "off_kappa_2": 6720
+   }
+  },
   "last_FULL_before_contact_k_is_stage_2k_plus_1": true,
   "retirements": [
    {

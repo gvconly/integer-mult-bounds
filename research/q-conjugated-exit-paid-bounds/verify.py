@@ -54,6 +54,7 @@ def main():
     assert G['retirements_whose_IDLE_matches_the_count'] == 8
     assert G['forced_new_or_rerouted_calls'] == 840 and G['allowance_rank1_jobs'] == 916
     assert G['idles_disjoint_from_own_FULL_stages'] == 15 and G['in_sector_required_calls_15_retirements'] == 1800
+    assert all(x == {'diag_kappa_0': 8, 'off_kappa_2': 6720} for x in G['kappa_census_exit_words'].values())
     assert E['paid_postdecoder_lower_bound_calls'] == 112 ** 3 and E['min_offdiagonal_support_of_K_plus_P_row'] > 0
     assert C['decode_rank_with_one_common_centre_line'] == 0 and C['decode_rank_diagonal_code'] == 0
     assert C['uncoded_CI_contact_rank'] == 120 and C['odd_e8_witness_rows_without_cross_cube_couplings'] == 0

@@ -12,7 +12,8 @@ Model and lemmas: PROOF.md.  Every bound below is a rank of class-coordinate row
 one vector to that span (PROOF.md Lemma A, the output-coset form of the coded-active-query-bound / encoded-exit-obstructions
 counting)."""
 from fractions import Fraction as Fr
-from common import load, par, canon, phase_class, ZERO, inv_f2_rows, column0, f2_apply, inverse, matmul, rank
+from common import (load, par, canon, phase_class, ZERO, inv_f2_rows, column0, f2_apply, inverse, matmul, rank,
+                    kappa_of, sym_monomial_inv, sym_xrot)
 
 NORM = 'research/coded-native-caller/NORMALIZERS.json'
 PROV = 'research/native-rank8-helper-provider/PROVIDER.json'
@@ -173,6 +174,33 @@ def idle_structure():
     return len(idles), {p: sorted(v) for p, v in full.items()}
 
 
+def kappa_census(rows, Ji):
+    """Lemma H premise: every off-diagonal exit word q^-1 K_a^-1 K_b q (J^-1_ab != 0) has kappa = 2, read with either
+    linear part (G as given, or its inverse transpose); diagonal words have kappa 0.  Q is the central X-rotation."""
+    n = 9
+    Q = sym_xrot(1)
+    def transpose_inv(G):
+        Gi = inv_f2_rows(G, n)
+        return [sum(((Gi[b] >> i) & 1) << b for b in range(n)) for i in range(n)]
+    out = {}
+    for conv, Gs in (('G', rows), ('G_inverse_transpose', [transpose_inv(G) for G in rows])):
+        hist = {}
+        for a in range(N):
+            for b in range(N):
+                if Ji[a][b] == 0:
+                    continue
+                # m = K_a^-1 K_b has linear part G_a^-1 G_b; S_m^-1 = S_{K_b}^-1 S_{K_a}
+                Ga = Gs[a]
+                Gai = inv_f2_rows(Ga, n)
+                fa_inv = sym_monomial_inv(Gai, n)            # inverse map of K_a^-1, i.e. S_{K_a}
+                fb_inv = sym_monomial_inv(Gs[b], n)
+                k = kappa_of([Q, fa_inv, fb_inv, Q], n)
+                key = ('diag' if a == b else 'off', k)
+                hist[key] = hist.get(key, 0) + 1
+        out[conv] = {'%s_kappa_%d' % kk: v for kk, v in sorted(hist.items())}
+    return out
+
+
 def allowance():
     q = [x for x in load(CSTAR)['quotas'] if x['rank'] == 1][0]
     assert q['additional_paid_tariff']['lower'] == '1' and q['additional_paid_alone']['exact_integer']
@@ -220,6 +248,7 @@ def main(verbose=True):
     res['retirements_without_scheduled_paid_call_on_Yk'] = sum(1 for x in ret if x['scheduled_paid_calls_on_Yk_after_contact'] == 0)
     res['retirements_whose_IDLE_matches_the_count'] = sum(1 for x in ret if x['scheduled_paid_calls_on_Yk_after_contact'] >= need)
     res['forced_new_or_rerouted_calls'] = sum(max(0, need - x['scheduled_paid_calls_on_Yk_after_contact']) for x in ret)
+    res['kappa_census_exit_words'] = kappa_census(rows, Ji)
     n_idle, full = idle_structure()
     res['idles_disjoint_from_own_FULL_stages'] = n_idle
     res['last_FULL_before_contact_k_is_stage_2k_plus_1'] = True

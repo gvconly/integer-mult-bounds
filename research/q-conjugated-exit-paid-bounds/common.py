@@ -107,3 +107,46 @@ def rank(rows):
                 rk += 1
                 break
     return rk
+
+
+# ---- Gaussian-rank budget (PROOF.md Lemma H): Lagrangian x-rank of Clifford words, over F2, n binary axes.
+# A Clifford word U acts on Pauli labels (x|z) by a symplectic map S_U; free monomials are exactly the Cliffords whose
+# S preserves L_Z = {(0|z)}.  kappa(U) = dim of the x-projection of S_U^-1 L_Z; it is a right-coset invariant, is
+# unchanged by free factors on either side, and kappa(gamma U) <= kappa(U) + kappa(gamma).
+
+def f2_rank(vecs):
+    basis = []
+    for v in vecs:
+        for b in basis:
+            v = min(v, v ^ b)
+        if v:
+            basis.append(v)
+    return len(basis)
+
+
+def sym_monomial_inv(G_rows, n):
+    """S_m^-1 for the address monomial x -> G x (Pauli/diagonal-Pauli phases only): (x|z) -> (G^-1 x | G^T z)."""
+    Gi = inv_f2_rows(G_rows, n)
+    cols = [sum(((G_rows[b] >> i) & 1) << b for b in range(n)) for i in range(n)]   # column i of G
+    def f(x, z):
+        return f2_apply(Gi, x), sum(par(cols[i] & z) << i for i in range(n))       # (G^T z)_i = (col_i of G) . z
+    return f
+
+
+def sym_xrot(axes_mask):
+    """S for a product of single-axis X-rotations (positive C Gaussians) on the given axes: (x|z) -> (x + z|S, z)."""
+    def f(x, z):
+        return x ^ (z & axes_mask), z
+    return f
+
+
+def kappa_of(maps, n):
+    """kappa(U) for U = U_1 U_2 ... U_k (U_k acts first on data).  S_U = S_{U_1} ... S_{U_k}, so applying S_U^-1 to
+    L_Z applies S_{U_1}^-1 first; `maps` lists [S_{U_1}^-1, ..., S_{U_k}^-1] in that application order."""
+    xs = []
+    for i in range(n):
+        x, z = 0, 1 << i
+        for f in maps:
+            x, z = f(x, z)
+        xs.append(x)
+    return f2_rank(xs)

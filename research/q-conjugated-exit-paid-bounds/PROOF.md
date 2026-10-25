@@ -90,7 +90,7 @@ Assume the chart's matched type: Y_k carries a q-conjugated balanced code after 
 
 The U-projection of the targets is then the decode, of rank 120. By Lemma B, at least 120 paid calls must touch U.
 
-- **Pairs 0..6** have no scheduled call on Y_k after contact k. So at least **7·120 = 840 calls must be added**, or rerouted from other banks' scheduled work.
+- **Pairs 0..6** have no scheduled call on Y_k after contact k. Apply Lemma B once, with U the union of the seven banks' post-contact fields, each taken as a fresh decoder input. The decodes are block diagonal on private coordinates, so the U-projection has rank 7·120. Hence at least **840 calls must be added**, or rerouted from other banks' scheduled work. Applying the lemma jointly matters: a single call on a field that mixes several banks counts only once.
 - **Pairs 7..14** do have a suffix IDLE, which supplies exactly 120 calls on Y_k. The next subsection treats when that IDLE can carry the decode.
 
 ### When can an IDLE carry the decode?
@@ -117,15 +117,47 @@ Let N be the order of D_H modulo the free monomials. N > 1, since D_H is not mon
 
 The target is D_H·barJ_s⁻¹ and has residue 1. Apply Lemma A to the program in which each IDLE call is replaced by a free grade shift; the group is Γ × Z_N with free part F × Z_N. The q_a⁻¹q_b cosets stay private, so at least **120 non-IDLE paid calls** must touch U.
 
+### A Gaussian-rank budget, and the IDLE pre/post-code lever
+
+This subsection works in a Clifford alphabet. The free monomials are affine permutations with Z₄ phases of degree at most 2, and paid calls are Clifford Gaussians. This is narrower than coded-active-query-bound's free group, which also admits non-Clifford phases and permutations. Every Clifford word U acts on Pauli labels (x|z) by a symplectic map S_U, and the Clifford monomials are exactly the Cliffords whose S_U preserves L_Z = {(0|z)}. Define
+
+> **κ(U) = dim π_X(S_U⁻¹ L_Z),** the dimension of the x-projection of U's Lagrangian.
+
+**Lemma H (rank budget).** κ is unchanged by free factors on either side. For any paid Gaussian γ, κ(γ·U) ≤ κ(U) + κ(γ). A rank-r Gaussian, a product of r single-axis rotations up to monomials, has κ = r.
+
+Consequently, every word produced by a program has κ at most the total rank of the paid calls along its path. By Lemma 1 of encoded-exit-obstructions, each target word must be produced exactly by some path. So that path carries paid rank at least κ(target word).
+
+*Proof.*
+1. Left factors: S_f preserves L_Z, so Λ(fU) = Λ(U).
+2. Right factors: a monomial symplectic map acts on x-parts by an invertible linear map, so κ(Uf) = κ(U).
+3. Paid factors: Λ(γU) = S_U⁻¹ Λ(γ). It contains S_U⁻¹(Λ(γ) ∩ L_Z), whose x-projection lies inside π_X Λ(U), with codimension at most κ(γ). ∎
+
+**Exit words.** Let m be a monomial with linear part G. For a signed monomial (no S-type phase on the centre axis), κ(Q⁻¹mQ) = 2 when G e0 ≠ e0, and 0 otherwise. The x-part of the Lagrangian is spanned by z₀·G⁻¹e0 + (z·Ge0)·e0. The verifier computes κ for every supported word of q⁻¹J⁻¹q from the actual normalizers, under both readings of the linear part. All 6,720 off-diagonal words have κ = 2, and every diagonal word has κ = 0.
+
+**Corollary (IDLE pre/post codes cannot carry the decode).** Model the IDLE as one parallel layer that applies D_H, of rank |S| = 8|H|, once to each field. Arbitrary free codes may surround it: owner mixing, codes in any stage's chart, cross-stage monomials that re-aim axes, and any workspace.
+
+- Every off-diagonal target word, D_H ⊗ (q⁻¹ m_ab q) on disjoint axis blocks, has κ = |S| + 2.
+- Every path through the layer carries paid rank |S|.
+- So no choice of pre/post codes realizes the decode.
+- Any completion must add **non-IDLE paid rank at least 2 on every off-diagonal decode path**. A path that bypasses the IDLE needs |S| + 2.
+
+The Corollary needs no sector restriction. It does rest on three conditions:
+1. the lever is a single IDLE layer with free codes around it, which is its proposed form;
+2. the alphabet is Clifford;
+3. the code's stage is not among the IDLE's stages.
+
+Condition 3 follows from the code-chart assumption. If the code lived in a stage u that the IDLE supplies, Lemma D would give κ = |S|, and that IDLE could carry the decode.
+
 ### Consequences
 
-- **In-sector, under the code-chart assumption.** All 15 retirements need at least 120 non-IDLE calls each on Y_k after contact k, and none is scheduled for any k. So at least **1,800 paid calls must be added**, or rerouted from later contacts or LOCALs of other pairs while those calls still meet their own targets.
+- **The IDLE pre/post-code lever is closed** by the Corollary, under its three conditions: a single IDLE layer, a Clifford alphabet, and a code stage outside the IDLE. The decode needs extra paid rank on every coupled path of every retiring bank. The elementary decoder (q, then the code inverse, then q⁻¹) supplies exactly 2, using 240 rank-1 calls per bank.
+- **In-sector, under the code-chart assumption.** All 15 retirements need at least 120 non-IDLE calls each on Y_k after contact k. Lemma E applies jointly, with one grading per IDLE. None of these calls is scheduled for any k. So at least **1,800 paid calls must be added**, or rerouted from later contacts or LOCALs of other pairs while those calls still meet their own targets.
   - Each added call costs at least 1.
   - The C* = 0.00330007 screen admits at most 916 additional rank-1 jobs, with the paid profile Popt held fixed. The rank-1 tariff is exactly 1, and higher ranks cost more.
   - **In this sector, the optimistic allowance cannot fund the Gamma termination unless at least 884 existing calls are rerouted, or a changed native FULL or contact places a stage-(2k+1) or central layer after each retirement (Lemma D).**
-- **Without the sector restriction.** Only Lemma B applies, giving at least **840** additional or rerouted calls for pairs 0–6, which is 91.7% of the allowance. The counting does not exclude IDLE pre/post codes or cross-stage re-aiming for pairs 7–14.
-
-Changing Popt itself, for example by splitting existing calls, requires a fresh screen; the 916 allowance does not apply to it.
+- **Without the sector restriction.** Lemma B gives at least **840** additional or rerouted calls for pairs 0–6, which is 91.7% of the allowance.
+  - For pairs 7–14, the Corollary still forbids IDLE-only decoding.
+  - But a count of the extra calls is not proven there, because one extra call can serve many paths.
 
 ## 2. Three fresh stages (odd-E8 negative exit)
 
