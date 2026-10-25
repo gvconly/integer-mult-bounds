@@ -1,0 +1,8 @@
+E8      bit     {'readers': 63, 'largest': 36, 'greedy': [36, 16, 10, 1], 'cover': 4, 'two_max': 52}
+E8      complex {'readers': 56, 'largest': 32, 'greedy': [32, 20, 4], 'cover': 3, 'two_max': 54}
+triples16 bit     {'readers': 234, 'largest': 198, 'greedy': [198, 33, 3], 'cover': 3, 'two_max': 234}
+triples16 complex {'readers': 325, 'largest': 299, 'greedy': [299, 24, 2], 'cover': 3, 'two_max': 323}
+triples20 bit     {'readers': 408, 'largest': 360, 'greedy': [360, 45, 3], 'cover': 3, 'two_max': 408}
+triples20 complex {'readers': 731, 'largest': 697, 'greedy': [697, 32, 2], 'cover': 3, 'two_max': 729}
+triples24 bit     {'readers': 630, 'largest': 570, 'greedy': [570, 57, 3], 'cover': 3, 'two_max': 630}
+triples24 complex {'readers': 1393, 'largest': 1351, 'greedy': [1351, 40, 2], 'cover': 3, 'two_max': 1391}

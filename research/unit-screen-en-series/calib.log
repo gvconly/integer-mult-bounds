@@ -1,0 +1,9 @@
+bit P111 (63/111, h=8)         X=6.0005e-03@s5  (published 6.0005e-03)
+complex P112 (64/112, h=9)     X=5.1863e-03@s5  (published 5.1863e-03)
+E8 Hamming frame x_lb 8/15     X=8.0093e-03@s3  (published 8.0090e-03)
+E7 7/9                         X=1.8468e-03@s11  (published 1.8470e-03)
+E8 root lines                      v=  120 h=  8 c=  9 orth=63..63 diag_ok=True  x_prx=0.6000 X=5.160e-03@s5  x_frm=0.6000 X=5.160e-03@s5  x_lb=0.5333 X=8.009e-03@s3 
+paper triples h=12 (G = |S n T| - 1) v=  220 h= 12 c= 12 orth=108..108 diag_ok=True  x_prx=0.6545 X=2.419e-03@s5 
+paper triples h=18 (G = |S n T| - 1) v=  816 h= 18 c= 18 orth=315..315 diag_ok=True  x_prx=0.3971 X=6.987e-03@s3 
+paper triples h=24 (G = |S n T| - 1) v= 2024 h= 24 c= 24 orth=630..630 diag_ok=True  x_prx=0.2846 X=7.388e-03@s3 
+75 s

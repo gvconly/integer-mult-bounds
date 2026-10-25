@@ -1,0 +1,351 @@
+[
+ {
+  "name": "E8 root lines",
+  "v": 120,
+  "h": 8,
+  "s": 3,
+  "vals": [
+   "-1",
+   "0",
+   "1"
+  ],
+  "bound": 120,
+  "fill": 1.0,
+  "orth": 63,
+  "omega_lb": 8,
+  "note": "",
+  "rule": "J+G",
+  "c": 9,
+  "x": 0.6,
+  "X": 0.005159798631791548,
+  "s_best": 5
+ },
+ {
+  "name": "E7 (lines orthogonal to a root)",
+  "v": 63,
+  "h": 7,
+  "s": 3,
+  "vals": [
+   "-1",
+   "0",
+   "1"
+  ],
+  "bound": 84,
+  "fill": 0.75,
+  "orth": 30,
+  "omega_lb": 7,
+  "note": "",
+  "rule": "J+G",
+  "c": 7,
+  "x": 0.7777777777777778,
+  "X": 0.001846847206360891,
+  "s_best": 11
+ },
+ {
+  "name": "D8 root lines",
+  "v": 56,
+  "h": 8,
+  "s": 3,
+  "vals": [
+   "-1",
+   "0",
+   "1"
+  ],
+  "bound": 120,
+  "fill": 0.467,
+  "orth": 31,
+  "omega_lb": 7,
+  "note": "",
+  "rule": "J+G",
+  "c": 7,
+  "x": 1.0,
+  "X": 0.0,
+  "s_best": null
+ },
+ {
+  "name": "D10 root lines",
+  "v": 90,
+  "h": 10,
+  "s": 3,
+  "vals": [
+   "-1",
+   "0",
+   "1"
+  ],
+  "bound": 220,
+  "fill": 0.409,
+  "orth": 57,
+  "omega_lb": 9,
+  "note": "",
+  "rule": "J+G",
+  "c": 9,
+  "x": 1.0,
+  "X": 0.0,
+  "s_best": null
+ },
+ {
+  "name": "D12 root lines",
+  "v": 132,
+  "h": 12,
+  "s": 3,
+  "vals": [
+   "-1",
+   "0",
+   "1"
+  ],
+  "bound": 364,
+  "fill": 0.363,
+  "orth": 91,
+  "omega_lb": 11,
+  "note": "",
+  "rule": "J+G",
+  "c": 11,
+  "x": 1.0,
+  "X": 0.0,
+  "s_best": null
+ },
+ {
+  "name": "D16 root lines",
+  "v": 240,
+  "h": 16,
+  "s": 3,
+  "vals": [
+   "-1",
+   "0",
+   "1"
+  ],
+  "bound": 816,
+  "fill": 0.294,
+  "orth": 183,
+  "omega_lb": 15,
+  "note": "",
+  "rule": "J+G",
+  "c": 15,
+  "x": 1.0,
+  "X": 0.0,
+  "s_best": null
+ },
+ {
+  "name": "E8 + E8 (decomposable)",
+  "v": 240,
+  "h": 16,
+  "s": 3,
+  "vals": [
+   "-1",
+   "0",
+   "1"
+  ],
+  "bound": 816,
+  "fill": 0.294,
+  "orth": 183,
+  "omega_lb": 8,
+  "note": "",
+  "rule": "J+G",
+  "c": 17,
+  "x": 1.1333333333333333,
+  "X": 0.0,
+  "s_best": null
+ },
+ {
+  "name": "triples h=9 (I_{h,1} roots)",
+  "v": 84,
+  "h": 8,
+  "s": 3,
+  "vals": [
+   "-1",
+   "0",
+   "1"
+  ],
+  "bound": 120,
+  "fill": 0.7,
+  "orth": 45,
+  "omega_lb": 8,
+  "note": "",
+  "rule": "J+G",
+  "c": 9,
+  "x": 0.8571428571428571,
+  "X": 0.0006992001449370529,
+  "s_best": 13
+ },
+ {
+  "name": "triples h=10 (I_{h,1} roots)",
+  "v": 120,
+  "h": 10,
+  "s": 3,
+  "vals": [
+   "-1",
+   "0",
+   "1"
+  ],
+  "bound": 220,
+  "fill": 0.545,
+  "orth": 63,
+  "omega_lb": 8,
+  "note": "",
+  "rule": "J+G",
+  "c": 10,
+  "x": 0.8333333333333334,
+  "X": 0.0007444787808690775,
+  "s_best": 13
+ },
+ {
+  "name": "triples h=12 (I_{h,1} roots)",
+  "v": 220,
+  "h": 12,
+  "s": 3,
+  "vals": [
+   "-1",
+   "0",
+   "1"
+  ],
+  "bound": 364,
+  "fill": 0.604,
+  "orth": 108,
+  "omega_lb": 12,
+  "note": "",
+  "rule": "J+G",
+  "c": 12,
+  "x": 0.6545454545454545,
+  "X": 0.0024186870696829414,
+  "s_best": 5
+ },
+ {
+  "name": "triples h=16 (I_{h,1} roots)",
+  "v": 560,
+  "h": 16,
+  "s": 3,
+  "vals": [
+   "-1",
+   "0",
+   "1"
+  ],
+  "bound": 816,
+  "fill": 0.686,
+  "orth": 234,
+  "omega_lb": 16,
+  "note": "",
+  "rule": "J+G",
+  "c": 16,
+  "x": 0.45714285714285713,
+  "X": 0.006123263792854414,
+  "s_best": 3
+ },
+ {
+  "name": "triples h=20 (I_{h,1} roots)",
+  "v": 1140,
+  "h": 20,
+  "s": 3,
+  "vals": [
+   "-1",
+   "0",
+   "1"
+  ],
+  "bound": 1540,
+  "fill": 0.74,
+  "orth": 408,
+  "omega_lb": 20,
+  "note": "",
+  "rule": "J+G",
+  "c": 20,
+  "x": 0.3508771929824561,
+  "X": 0.007351183769407273,
+  "s_best": 3
+ },
+ {
+  "name": "triples h=24 (I_{h,1} roots)",
+  "v": 2024,
+  "h": 24,
+  "s": 3,
+  "vals": [
+   "-1",
+   "0",
+   "1"
+  ],
+  "bound": 2600,
+  "fill": 0.778,
+  "orth": 630,
+  "omega_lb": 24,
+  "note": "",
+  "rule": "J+G",
+  "c": 24,
+  "x": 0.2845849802371542,
+  "X": 0.007388222422275112,
+  "s_best": 3
+ },
+ {
+  "name": "Barnes-Wall BW16 minimal lines",
+  "v": 2160,
+  "h": 16,
+  "s": 5,
+  "vals": [
+   "-2",
+   "-1",
+   "0",
+   "1",
+   "2"
+  ],
+  "bound": 15504,
+  "fill": 0.139,
+  "orth": 855,
+  "omega_lb": 41,
+  "note": "(Gram/2: norm 4)",
+  "rule": "dyadic only"
+ },
+ {
+  "name": "Golay octads S(5,8,24)",
+  "v": 759,
+  "h": 24,
+  "s": 3,
+  "vals": [
+   "-4",
+   "-2",
+   "0"
+  ],
+  "bound": 2900,
+  "fill": 0.262,
+  "orth": 280,
+  "omega_lb": 9,
+  "note": "(4N = G - 4J)",
+  "rule": "dyadic only"
+ },
+ {
+  "name": "lines of PG(3,2) (STS)",
+  "v": 35,
+  "h": 15,
+  "s": 2,
+  "vals": [
+   "-1",
+   "0"
+  ],
+  "bound": 135,
+  "fill": 0.259,
+  "orth": 18,
+  "omega_lb": 5,
+  "note": "",
+  "rule": "J+G",
+  "c": 7,
+  "x": 3.0,
+  "X": 0.0,
+  "s_best": null
+ },
+ {
+  "name": "lines of PG(4,2) (STS)",
+  "v": 155,
+  "h": 31,
+  "s": 2,
+  "vals": [
+   "-1",
+   "0"
+  ],
+  "bound": 527,
+  "fill": 0.294,
+  "orth": 42,
+  "omega_lb": 9,
+  "note": "",
+  "rule": "J+G",
+  "c": 21,
+  "x": 4.2,
+  "X": 0.0,
+  "s_best": null
+ }
+]

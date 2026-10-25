@@ -1,0 +1,18 @@
+E8 root lines                          v=   120 h=  8 s=3 vals=-1,0,1                 bound=    120 fill=1.000 orth=    63 omega>=   8 c=9 x=0.600 X=5.160e-03 
+E7 (lines orthogonal to a root)        v=    63 h=  7 s=3 vals=-1,0,1                 bound=     84 fill=0.750 orth=    30 omega>=   7 c=7 x=0.778 X=1.847e-03 
+D8 root lines                          v=    56 h=  8 s=3 vals=-1,0,1                 bound=    120 fill=0.467 orth=    31 omega>=   7 c=7 x=1.000 X=0.000e+00 
+D10 root lines                         v=    90 h= 10 s=3 vals=-1,0,1                 bound=    220 fill=0.409 orth=    57 omega>=   9 c=9 x=1.000 X=0.000e+00 
+D12 root lines                         v=   132 h= 12 s=3 vals=-1,0,1                 bound=    364 fill=0.363 orth=    91 omega>=  11 c=11 x=1.000 X=0.000e+00 
+D16 root lines                         v=   240 h= 16 s=3 vals=-1,0,1                 bound=    816 fill=0.294 orth=   183 omega>=  15 c=15 x=1.000 X=0.000e+00 
+E8 + E8 (decomposable)                 v=   240 h= 16 s=3 vals=-1,0,1                 bound=    816 fill=0.294 orth=   183 omega>=   8 c=17 x=1.133 X=0.000e+00 
+triples h=9 (I_{h,1} roots)            v=    84 h=  8 s=3 vals=-1,0,1                 bound=    120 fill=0.700 orth=    45 omega>=   8 c=9 x=0.857 X=6.992e-04 
+triples h=10 (I_{h,1} roots)           v=   120 h= 10 s=3 vals=-1,0,1                 bound=    220 fill=0.545 orth=    63 omega>=   8 c=10 x=0.833 X=7.445e-04 
+triples h=12 (I_{h,1} roots)           v=   220 h= 12 s=3 vals=-1,0,1                 bound=    364 fill=0.604 orth=   108 omega>=  12 c=12 x=0.655 X=2.419e-03 
+triples h=16 (I_{h,1} roots)           v=   560 h= 16 s=3 vals=-1,0,1                 bound=    816 fill=0.686 orth=   234 omega>=  16 c=16 x=0.457 X=6.123e-03 
+triples h=20 (I_{h,1} roots)           v=  1140 h= 20 s=3 vals=-1,0,1                 bound=   1540 fill=0.740 orth=   408 omega>=  20 c=20 x=0.351 X=7.351e-03 
+triples h=24 (I_{h,1} roots)           v=  2024 h= 24 s=3 vals=-1,0,1                 bound=   2600 fill=0.778 orth=   630 omega>=  24 c=24 x=0.285 X=7.388e-03 
+Barnes-Wall BW16 minimal lines         v=  2160 h= 16 s=5 vals=-2,-1,0,1,2            bound=  15504 fill=0.139 orth=   855 omega>=  41 dyadic only (Gram/2: norm 4)
+Golay octads S(5,8,24)                 v=   759 h= 24 s=3 vals=-4,-2,0                bound=   2900 fill=0.262 orth=   280 omega>=   9 dyadic only (4N = G - 4J)
+lines of PG(3,2) (STS)                 v=    35 h= 15 s=2 vals=-1,0                   bound=    135 fill=0.259 orth=    18 omega>=   5 c=7 x=3.000 X=0.000e+00 
+lines of PG(4,2) (STS)                 v=   155 h= 31 s=2 vals=-1,0                   bound=    527 fill=0.294 orth=    42 omega>=   9 c=21 x=4.200 X=0.000e+00 
+57 s

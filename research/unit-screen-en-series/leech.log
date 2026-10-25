@@ -1,0 +1,8 @@
+lines 98280 norms {32}
+inner products with line 0: {-16: 1024, -8: 2048, 0: 46575, 8: 45056, 16: 3576, 32: 1}
+orthogonal lines per line: 46575
+distinct off-diagonal values 5  polynomial bound 98280  fill 1.000
+label rule (J+G) applies? False (inner products /8 must be 0 or odd)
+greedy clique of pairwise non-orthogonal lines >= 124
+greedy cover of the 46575 orthogonal readers (sampled hyperplanes): 9 sections, sizes [24948, 11907, 5508, 2460, 1056, 440, 172, 72, 12]
+6 s
