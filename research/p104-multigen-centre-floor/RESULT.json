@@ -1,0 +1,221 @@
+{
+ "T_sizes": {
+  "A2_pairs": 3360,
+  "T_sizes_by_norm": {
+   "2": [
+    49,
+    52
+   ],
+   "4": [
+    62,
+    65,
+    68,
+    71
+   ],
+   "6": [
+    71,
+    73,
+    74,
+    75,
+    76
+   ],
+   "8": [
+    49,
+    52,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83
+   ]
+  },
+  "min_T_E6_continuum": 72,
+  "min_T_lattice": 49,
+  "vectors_norm_le_8": 13320
+ },
+ "capacities_m_d": {
+  "1": 1,
+  "2": 2,
+  "3": 4,
+  "4": 8,
+  "5": 12,
+  "6": 20,
+  "7": 36,
+  "8": 60
+ },
+ "centre": {
+  "centre_cost": 56,
+  "content_labels": [
+   104,
+   162,
+   266,
+   289,
+   76,
+   42,
+   97,
+   127
+  ],
+  "descent_steps": [
+   [
+    [
+     8,
+     1
+    ]
+   ],
+   [
+    [
+     8,
+     1
+    ]
+   ],
+   [
+    [
+     8,
+     1
+    ]
+   ],
+   [
+    [
+     8,
+     7
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   [
+    [
+     8,
+     1
+    ]
+   ],
+   [
+    [
+     8,
+     1
+    ]
+   ],
+   [
+    [
+     8,
+     1
+    ]
+   ],
+   [
+    [
+     8,
+     1
+    ]
+   ]
+  ],
+  "landing_lines": [
+   7,
+   25,
+   52,
+   82,
+   491,
+   448,
+   67,
+   137
+  ],
+  "owned_lifetimes": 8,
+  "ports_with_exact_frame_pair_support": 104
+ },
+ "control_multigen_design": {
+  "R8_rank_at_lines": 8,
+  "cost": 56,
+  "deliveries": 12,
+  "landing_dims": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   2,
+   2,
+   2,
+   2
+  ],
+  "ports_satisfied": 104
+ },
+ "control_selected_master_inequality": {
+  "R_2..R_8": 8,
+  "R_9": 0,
+  "actual": 56,
+  "bound": 56,
+  "shallow_fresh": 0
+ },
+ "geometry": {
+  "gram_det": 1,
+  "gram_solution_dimension": 1,
+  "lines": 120,
+  "orthogonal_8_frames_inside_removed": 2,
+  "ports": 104,
+  "removed": 16,
+  "removed_labels": [
+   127,
+   97,
+   42,
+   76,
+   289,
+   82,
+   266,
+   52,
+   162,
+   137,
+   25,
+   491,
+   104,
+   67,
+   448,
+   7
+  ]
+ },
+ "lemma1_good_ports": 104,
+ "lemma2_bad_hyperplanes": [],
+ "no_A2_among_removed": true,
+ "subspaces_enumerated": {
+  "1": 511,
+  "2": 43435,
+  "3": 788035,
+  "4": 3309747,
+  "5": 3309747,
+  "6": 788035,
+  "7": 43435,
+  "8": 511
+ },
+ "theorem_B_bounds_by_last_level": {
+  "1": 98,
+  "2": 74,
+  "3": 63,
+  "4": 58,
+  "5": 57,
+  "6": 56,
+  "7": 56
+ },
+ "theorem_C_bound": 56,
+ "two_plane": {
+  "candidate_T_sets_le_72": 4016,
+  "covered": 16,
+  "covered_equals_removed_root_sets": true,
+  "covered_sizes": [
+   52
+  ],
+  "plane_worlds": 43435
+ }
+}

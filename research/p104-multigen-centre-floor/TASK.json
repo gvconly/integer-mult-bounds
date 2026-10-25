@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "task_id": "centre-path-sharing",
+  "priority_revision": 7,
+  "base_commit": "5e0052ca0aa3036a3afa8b0438927377c8d97d53",
+  "original_card": {
+    "id": "centre-path-sharing",
+    "question": "Can the 64-per-call centre path (eight rank-8 COPY/ERASE totals through the private temporary) be shared across calls or shrunk?",
+    "starting_points": [
+      "docs/research/research-family-status.md",
+      "research/complex-local-word-ceiling/README.md",
+      "research/split-centres-global/proofs/PR386-BIT-GEOMETRY.txt",
+      "certificates/selected-result.json"
+    ],
+    "methods": [
+      "Derive a fully charged favorable relaxation for sharing one centre path across k calls, including restoration, hosting and precision.",
+      "Prove a lower bound on copied information per call for the selected decoder contract."
+    ],
+    "acceptance_gate": "Show the changed centre charge and copy profile per call with every added restoration or hosting cost charged, and its ceiling via ceiling.ceiling(centre=...). A scoped local result may be retained without a complete supplier. Expanding it into further construction rounds requires the family-level budget and obligation gate in research-family-status.md; an optimistic passing relaxation alone is not acceptance.",
+    "first_step": {
+      "command": [
+        "python3",
+        "-B",
+        "research/complex-local-word-ceiling/verify.py"
+      ],
+      "expected": "PASS_COMPLEX_LOCAL_WORD_CEILING",
+      "inspect": "Read the selected word's per-call local profile, its packing ceiling and the lever table; run levers.py for the ideal budget of the lever you target.",
+      "scope": "Positive control and planning budget only; this is not a new construction or full cold replay."
+    },
+    "first_experiment": "Write the per-call centre charge and copy children for sharing across k = 2 calls, charge the sharing overhead, and screen it; stop this route if even the ideal sharing gains under 10%. Ideal budgets: free 2.80x, shared by two 1.90x (levers.py).",
+    "bottleneck_link": "The centre path consumes 64 of about 99.6 unpaid coordinates per call, i.e. about 64% of the raw deficit.",
+    "allowed_variations": [
+      "One sharing pattern across a fixed number of calls.",
+      "One reduced copied-total contract for the existing decoder.",
+      "If the coverage law, template or guard changes, derive an applicable fully charged replacement bound instead of applying the incumbent ceiling outside its scope."
+    ],
+    "scope_change_triggers": [
+      "Removing copies without a replacement contract for the decoder's copied totals.",
+      "Continuing a partial cost improvement while leaving the same unpriced consumer, restoration or central-readout obligation unresolved; refresh the family expansion decision first. Local product-retiming evidence has a narrow scope and is not a ban on changed graphs or contracts."
+    ],
+    "overlap_terms": [
+      "centre path",
+      "copied totals",
+      "private temporary",
+      "shared centre",
+      "batching"
+    ]
+  },
+  "scope_status": "changed",
+  "actual_scope": "Lower bounds on the P104 centre (owned descent mass per FULL) for every word with the P104 mains and root-code centre contents, allowing multi-generation descents (contents built from earlier owned landings), which Model C does not price.",
+  "scope_change_reason": "The P104 centre is 56 per FULL rather than the selected word's 64; the open lever is shrinking it by re-descending landed contents. A floor in that model answers whether the lever exists before any construction.",
+  "bottleneck_link": "Each unit removed from the 56-unit P104 centre is worth about +7e-5 kappa on the P104 frontier invoice (0.81 units reach C = 0.0031). Single-generation decoder floors (Theorem 4 of ideal-decoder-floors, frontier-format Theorem P) do not cover multi-generation words.",
+  "budget_minutes": 240,
+  "stop_rule": "Stop after the master inequality, the profiles it closes (R_8 = 8, R_8 = 7, and R_8 = 6 with R_7 = 8) with exact certificates, and a precise statement of the residual shallow covering problem; no construction search beyond the recorded screens.",
+  "outcome": "partial",
+  "evidence": "PROOF.md; verify.py (common.py, floor.py) with controls; RESULT.json",
+  "author": "G. V. Chudnovsky",
+  "ai_assistance": "Substantial Anthropic Claude assistance (analysis, code and drafting) for G. V. Chudnovsky.",
+  "open_questions": [
+    {
+      "question": "Shallow covering problem: with Z = (V'_8)^perp of dim s and pairs (beta_j in Z, frame F_j of level <= 7) such that proj_Z(r_p) lies in span{beta_j : p in world(F_j)} for every port, is the number of pairs at least sum_i (9 - max(delta_i, 2))?",
+      "why_it_matters": "It is the only gap between Theorems A-C and a complete root-code floor of 56 for the P104 centre; a counterexample whose contents are available would be a sub-56 centre (about +7e-5 kappa per unit).",
+      "first_step": "Decide s = 2 with delta = (7, 6): show four pairs (one on the line of Z_7 and three at level <= 6) cannot cover; a removed-root T is covered by three level-6 worlds, so the plane pair must be used.",
+      "blocked_by": "Coverage alone gives only s + 1 pairs (Singleton type); a plane-level analogue of Theorem 4 is needed for s >= 3."
+    },
+    {
+      "question": "Does the floor extend to non-root-code centre contents (rank-9 realisations, contents outside the root code)?",
+      "why_it_matters": "These are the open decoder cases (b)-(d) of decoder-floors-frontier-format, now in the multi-generation word model.",
+      "first_step": "Repeat Lemma 2 for general first-generation contents: they exist at every frame, so the feed inequality must charge them.",
+      "blocked_by": "The rank-per-level potential uses that root-code sources sit only at levels 0 and 1."
+    }
+  ],
+  "outcome_note": "Any root-code P104 centre, multi-generation included, costs at least 56 unless at least two independent content directions never reach a line, with at least one of them ending above the planes if there are only two. The selected 56 meets the master inequality with equality; an explicit multi-generation centre also reaches 56 with R_8 = 8."
+}

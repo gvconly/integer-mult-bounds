@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "base_commit": "5e0052ca0aa3036a3afa8b0438927377c8d97d53",
+  "files": [
+    {
+      "path": "certificates/selected-result.json",
+      "usage": "provenance",
+      "git_blob": "fc3d4ba105e1f097d0d7d051a308281e86ab1446",
+      "sha256": "66974efdced4083c00025f97d95d83909a226cdf801edb9301c195c6641f6903"
+    },
+    {
+      "path": "docs/research/agent-task-catalog.json",
+      "usage": "provenance",
+      "git_blob": "f126dd2e2dad2b669e75d1d0d0bd05c600725602",
+      "sha256": "f7a48bfa2659b88378282a8eee7d9fe52cdf505594124c4d1686b58510fffd72"
+    },
+    {
+      "path": "research/centre-descent-tree-audit/README.md",
+      "usage": "provenance",
+      "git_blob": "961a60d4a51470d81cbc2e0c7ac03772689fc2e1",
+      "sha256": "19dfad98cb58670de1053da8fb959de3407dbab692e2c33d133c0126f9f9ff88"
+    },
+    {
+      "path": "research/decoder-floors-frontier-format/README.md",
+      "usage": "provenance",
+      "git_blob": "83999445cb77ae238c576d952975b275461f4458",
+      "sha256": "515b4fc40aa63515cda48740a16a7c87cea04384242369dac5be93e5556655b3"
+    },
+    {
+      "path": "research/ideal-decoder-floors/README.md",
+      "usage": "provenance",
+      "git_blob": "fdfbfbdf0f70bcff6118c919b34ab0ecad67ddd8",
+      "sha256": "a7f2f83a3e44ec2d5a65d74becdf00467a8ce68281d5c1195569edbeac60ab87"
+    },
+    {
+      "path": "research/p104-productive-controller/README.md",
+      "usage": "provenance",
+      "git_blob": "09dce91f62a2c1fba3f94a545cf2759f0eeec9ff",
+      "sha256": "c8d3ec258ce4d15d61103b4ac90c11409587d7b1da2ed8211fc30d0e6521b466"
+    },
+    {
+      "path": "research/p104-productive-controller/WORD.json.gz",
+      "usage": "input",
+      "git_blob": "70f954b346dcf5ee27d394f74d0804731deafd86",
+      "sha256": "e5e955d7c9d5ea5dfea49c0e093037df577aa43813dcad5427ebca41a4ad35ec"
+    }
+  ]
+}
