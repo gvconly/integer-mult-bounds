@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "status": "ready",
+  "python": "3.12",
+  "requirements": [],
+  "inputs": [
+    "research/coded-native-caller/NORMALIZERS.json",
+    "research/global120-optimistic-budget/evidence/global120-Cstar-v1.json",
+    "research/global120-optimistic-budget/science/inputs/04-CONTROLLER.json",
+    "research/global120-optimistic-budget/science/inputs/05-INVOICE-NEUTRAL-LITERAL.json",
+    "research/global120-optimistic-budget/science/inputs/10-BALANCED-J-NATIVE-v1.json",
+    "research/native-rank8-helper-provider/PROVIDER.json",
+    "research/odd-e8-negative-exit-algebra/RESULT.json",
+    "research/odd-e8-negative-exit-algebra/source/K-TEMPLATE.json"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "{python}",
+        "-I",
+        "-B",
+        "{package}/verify.py"
+      ],
+      "timeout_seconds": 180,
+      "checks": "GLOBAL120 class ranks (exit, cut (4)-(5) variants, calibrations), controller retirements with per-event invoice paid calls, 916 allowance; odd-E8 base K/P/label premises, witness coverage, E diagonal, margins; four controls; RESULT.json equality"
+    }
+  ]
+}

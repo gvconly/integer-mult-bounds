@@ -1,0 +1,190 @@
+{
+ "controls": {
+  "decode_rank_diagonal_code": 0,
+  "decode_rank_with_one_common_centre_line": 0,
+  "decode_rank_with_two_owners_identified": 120,
+  "odd_e8_witness_rows_without_cross_cube_couplings": 0,
+  "uncoded_CI_contact_rank": 120
+ },
+ "global120": {
+  "C": "330007/100000000",
+  "J_inverse_offdiagonal_support": 6720,
+  "allowance_rank1_jobs": 916,
+  "calibration_uncoded_CP_contact": 112,
+  "cut5_CI_Y0_already_decoded": 240,
+  "cut5_CI_nominated": 240,
+  "cut5_CP_Y0_already_decoded": 232,
+  "cut5_CP_nominated": 240,
+  "cut5_CP_ports_only_decode": 232,
+  "cut5_extra_over_120_retained_calls": 112,
+  "decode_barJinv_120": 120,
+  "decode_old112_calibration": 112,
+  "distinct_G_e0": 120,
+  "distinct_G_inverse_e0": 120,
+  "distinct_centre_functionals": 120,
+  "distinct_nonfree_q_classes": 120,
+  "distinct_pair_classes_on_support": 3360,
+  "distinct_row0_G": 120,
+  "forced_new_or_rerouted_calls": 840,
+  "forced_share_of_allowance": "210/229",
+  "retirements": [
+   {
+    "contact": 0,
+    "data_leaves_Yk_before_tail": false,
+    "free_writes_to_Yk": 0,
+    "later_idles_on_pair": [],
+    "query_index": 9,
+    "scheduled_paid_calls_on_Yk_after_contact": 0
+   },
+   {
+    "contact": 1,
+    "data_leaves_Yk_before_tail": false,
+    "free_writes_to_Yk": 0,
+    "later_idles_on_pair": [],
+    "query_index": 16,
+    "scheduled_paid_calls_on_Yk_after_contact": 0
+   },
+   {
+    "contact": 2,
+    "data_leaves_Yk_before_tail": false,
+    "free_writes_to_Yk": 0,
+    "later_idles_on_pair": [],
+    "query_index": 23,
+    "scheduled_paid_calls_on_Yk_after_contact": 0
+   },
+   {
+    "contact": 3,
+    "data_leaves_Yk_before_tail": false,
+    "free_writes_to_Yk": 0,
+    "later_idles_on_pair": [],
+    "query_index": 30,
+    "scheduled_paid_calls_on_Yk_after_contact": 0
+   },
+   {
+    "contact": 4,
+    "data_leaves_Yk_before_tail": false,
+    "free_writes_to_Yk": 0,
+    "later_idles_on_pair": [],
+    "query_index": 37,
+    "scheduled_paid_calls_on_Yk_after_contact": 0
+   },
+   {
+    "contact": 5,
+    "data_leaves_Yk_before_tail": false,
+    "free_writes_to_Yk": 0,
+    "later_idles_on_pair": [],
+    "query_index": 44,
+    "scheduled_paid_calls_on_Yk_after_contact": 0
+   },
+   {
+    "contact": 6,
+    "data_leaves_Yk_before_tail": false,
+    "free_writes_to_Yk": 0,
+    "later_idles_on_pair": [],
+    "query_index": 51,
+    "scheduled_paid_calls_on_Yk_after_contact": 0
+   },
+   {
+    "contact": 7,
+    "data_leaves_Yk_before_tail": false,
+    "free_writes_to_Yk": 0,
+    "later_idles_on_pair": [
+     108
+    ],
+    "query_index": 57,
+    "scheduled_paid_calls_on_Yk_after_contact": 120
+   },
+   {
+    "contact": 8,
+    "data_leaves_Yk_before_tail": false,
+    "free_writes_to_Yk": 0,
+    "later_idles_on_pair": [
+     109
+    ],
+    "query_index": 63,
+    "scheduled_paid_calls_on_Yk_after_contact": 120
+   },
+   {
+    "contact": 9,
+    "data_leaves_Yk_before_tail": false,
+    "free_writes_to_Yk": 0,
+    "later_idles_on_pair": [
+     110
+    ],
+    "query_index": 69,
+    "scheduled_paid_calls_on_Yk_after_contact": 120
+   },
+   {
+    "contact": 10,
+    "data_leaves_Yk_before_tail": false,
+    "free_writes_to_Yk": 0,
+    "later_idles_on_pair": [
+     111
+    ],
+    "query_index": 75,
+    "scheduled_paid_calls_on_Yk_after_contact": 120
+   },
+   {
+    "contact": 11,
+    "data_leaves_Yk_before_tail": false,
+    "free_writes_to_Yk": 0,
+    "later_idles_on_pair": [
+     112
+    ],
+    "query_index": 81,
+    "scheduled_paid_calls_on_Yk_after_contact": 120
+   },
+   {
+    "contact": 12,
+    "data_leaves_Yk_before_tail": false,
+    "free_writes_to_Yk": 0,
+    "later_idles_on_pair": [
+     113
+    ],
+    "query_index": 87,
+    "scheduled_paid_calls_on_Yk_after_contact": 120
+   },
+   {
+    "contact": 13,
+    "data_leaves_Yk_before_tail": false,
+    "free_writes_to_Yk": 0,
+    "later_idles_on_pair": [
+     114
+    ],
+    "query_index": 93,
+    "scheduled_paid_calls_on_Yk_after_contact": 120
+   },
+   {
+    "contact": 14,
+    "data_leaves_Yk_before_tail": false,
+    "free_writes_to_Yk": 0,
+    "later_idles_on_pair": [
+     115
+    ],
+    "query_index": 99,
+    "scheduled_paid_calls_on_Yk_after_contact": 120
+   }
+  ],
+  "retirements_whose_IDLE_matches_the_count": 8,
+  "retirements_without_scheduled_paid_call_on_Yk": 7,
+  "tail_start_index": 116
+ },
+ "odd_e8": {
+  "C_odd_nonzero_eigenvalues": [
+   "98",
+   "-1078"
+  ],
+  "E_diagonal": "1541/104663",
+  "base_labels_distinct": 112,
+  "decoder_floor_per_port_per_local_call": "1/3",
+  "floor_over_margin": "7.606747",
+  "full120_declared_margin_per_port_per_local_call": "0.08928848513036617338",
+  "full120_floor_over_margin_if_premises_hold": "3.733217",
+  "min_offdiagonal_support_of_K_plus_P_row": 48,
+  "naive_postdecoder_calls": 2809856,
+  "owners_v": 1404928,
+  "owners_with_private_witness": 1404928,
+  "paid_postdecoder_lower_bound_calls": 1404928,
+  "source_margin_per_port_per_local_call": "0.04382074131724227751"
+ }
+}

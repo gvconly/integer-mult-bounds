@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "task_id": "complex-rank-shape-decoder",
+  "priority_revision": 7,
+  "base_commit": "13be6ac685845c1ff671f5d26e7166165abd998e",
+  "original_card": {
+    "id": "complex-rank-shape-decoder",
+    "question": "Can a decoder deliver the local paid mass in fewer, larger-rank children (block frame climbs instead of rank-1 to rank-3 steps)?",
+    "starting_points": [
+      "docs/research/research-family-status.md",
+      "research/complex-local-word-ceiling/README.md",
+      "research/complex-decoder-field-extension-seed44/README.md",
+      "research/complex-frame-pair-decoders/README.md",
+      "research/selected-k8-unrestricted-ends/README.md",
+      "research/eisenstein-reduction-copy-floor/README.md"
+    ],
+    "methods": [
+      "Find one exact small decoding identity whose frame path climbs in blocks, and price its complete per-call profile.",
+      "Bound the best effective child rank achievable for one fixed support alphabet, including copies, frames and restoration."
+    ],
+    "acceptance_gate": "A per-call local profile, with all copied information, frames and restoration counted, whose ceiling exceeds the selected word's by at least 5%; masked or overcomplete supports must change an assumption of the eight-term all-pairs bound. A scoped local result may be retained without a complete supplier. Expanding it into further construction rounds requires the family-level budget and obligation gate in research-family-status.md; an optimistic passing relaxation alone is not acceptance.",
+    "first_step": {
+      "command": [
+        "python3",
+        "-B",
+        "research/complex-local-word-ceiling/verify.py"
+      ],
+      "expected": "PASS_COMPLEX_LOCAL_WORD_CEILING",
+      "inspect": "Read the selected word's per-call local profile, its packing ceiling and the lever table; run levers.py for the ideal budget of the lever you target.",
+      "scope": "Positive control and planning budget only; this is not a new construction or full cold replay."
+    },
+    "first_experiment": "Before any synthesis, write the candidate per-call local profile (and centre charge / unpaid coordinates if changed) and screen it with ceiling.ceiling(); reject it if even the ideal ceiling does not beat the selected word's by your stated margin. Ideal budget: rank-16 delivery is 2.31x (levers.py).",
+    "bottleneck_link": "Rank-1 children are about half of recursive cost; the selected word's effective child rank is about 3.9. Larger-rank delivery lowers recursive cost per unit of paid mass.",
+    "allowed_variations": [
+      "One masked, overcomplete or block decoder family with exact labels and supports.",
+      "A scoped lower bound on effective rank for one alphabet.",
+      "If the coverage law, template or guard changes, derive an applicable fully charged replacement bound instead of applying the incumbent ceiling outside its scope."
+    ],
+    "scope_change_triggers": [
+      "Repacking idle remainders of an unchanged word (covered by the packing ceiling).",
+      "Repeating the eight-term all-pairs search inside its proved scope.",
+      "Only changing helper terminal subspaces and monotone frames within the fixed scalar word, entrances and cleanup contract already covered by #1995/#2013.",
+      "Searching below C=40 in the #2017 Eisenstein binary scalar-rectangle or fixed-support block-linear additive pairing model; specify a changed premise instead. This bound does not cover every complex decoder.",
+      "Continuing a partial cost improvement while leaving the same unpriced consumer, restoration or central-readout obligation unresolved; refresh the family expansion decision first. Local product-retiming evidence has a narrow scope and is not a ban on changed graphs or contracts."
+    ],
+    "overlap_terms": [
+      "rank shape",
+      "block climb",
+      "masked decoder",
+      "overcomplete",
+      "effective rank"
+    ]
+  },
+  "scope_status": "changed",
+  "actual_scope": "Exact paid-call lower bounds for q-conjugated exits: the GLOBAL120 balanced-J exit, the nominated retirement cut (4)-(5) and the 15 controller retirements (invoice-checked); and the odd-E8 (PR5464/PR5508) negative post-decoder.",
+  "scope_change_reason": "The open decoder questions of the GLOBAL120 chart and of the odd-E8/full120 packages ask whether a paid decoder fits their budgets; a paid lower bound answers that directly, while block-rank shape does not.",
+  "bottleneck_link": "Both conditional routes (GLOBAL120 at C*=0.00330007; odd-E8/full120 with a granted negative H73 half) rest on an unpriced q-conjugated decoder. Terminating GLOBAL120 pairs 0-6 alone forces 840 of the 916-job allowance; an odd-E8 post-decoder needs 1/3 per port per local call against a 0.0438 margin.",
+  "budget_minutes": 240,
+  "stop_rule": "Stop after exact source-bound ranks, the controller retirement check, the three-stage witness lemma and the two budget comparisons; no construction search.",
+  "outcome": "partial",
+  "evidence": "PROOF.md; verify.py with controls; RESULT.json; global120.py; e8.py",
+  "author": "G. V. Chudnovsky",
+  "ai_assistance": "Substantial Anthropic Claude assistance (analysis, code and drafting) for G. V. Chudnovsky.",
+  "open_questions": [
+    {
+      "question": "Can an already-paid IDLE carry the q-conjugated decode (GLOBAL120 pairs 7-14, coded callers generally)?",
+      "why_it_matters": "Counting allows it, and it is the main remaining lever for both lines.",
+      "first_step": "One frozen pair with its suffix IDLE tested on all-input targets.",
+      "blocked_by": "The missing 120-wide RIGHT/endpoint/allocation ABI listed in the GLOBAL120 chart."
+    },
+    {
+      "question": "Can a correlated or pre-emission copy of the negative bank decode it below one paid call per owner?",
+      "why_it_matters": "It is the only history lever the post-decoder floors leave open; encoded-exit-obstructions found 8xH8 against 112xH1 in its setting.",
+      "first_step": "Price one explicit pre-emission copy route for the odd-E8 negative bank with its retained-history invoice.",
+      "blocked_by": "No retained-history contract is emitted for the N3 word."
+    },
+    {
+      "question": "What is the exact paid complexity of the exits between the floors v (120) and the elementary 2v (240)?",
+      "why_it_matters": "It fixes the true price of any coded route with an odd-q exit.",
+      "first_step": "Search for a chronological circuit below 2v on one small-owner instance, or a sharper invariant.",
+      "blocked_by": "None; same gap as coded-active-query-bound's 112-224."
+    }
+  ],
+  "outcome_note": "Negative for the odd-E8 post-decoder and for the nominated GLOBAL120 cut; for GLOBAL120 retirements a forced 840/916 share for pairs 0-6, with pairs 7-14 (IDLE-borne decodes) left open."
+}
