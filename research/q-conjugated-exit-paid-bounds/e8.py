@@ -2,7 +2,7 @@
 
 Target (PR5508, odd-e8-negative-exit-algebra/PROOF.md): J = Q^-1 E1^-1 E2 E3^-1 Q on the emitted negative bank of
 v = 112^3 owners, E_s = L_s^-1 A L_s, A^-1 = K_odd + C_odd in normalized owner coordinates.  The three-stage private
-witness lemma (PROOF.md, Lemma D) gives every output owner d = (a,b,c) its own non-free class coordinate, through
+witness lemma (PROOF.md, Lemma G) gives every output owner d = (a,b,c) its own non-free class coordinate, through
 the path j -> d -> d -> d with j = (a',b,c).  Its coefficient is (E^-1)_dd * E_dd * (E^-1)_dj
 = 1 * E_dd * (K + P)_aa' / 2, so it suffices that each base row of K + P has an off-diagonal entry and E_dd != 0.
 

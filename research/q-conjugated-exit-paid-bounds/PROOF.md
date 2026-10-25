@@ -83,17 +83,49 @@ Take k = 0..14. QUERY_SHEAR(·, k) reads X_k and adds q⁻¹X_k to Y_k. The veri
 - The only later paid calls on Y_k are suffix IDLEs:
   - for k = 0..6 there are none;
   - for k = 7..14 one IDLE pays 112 main calls on Y_k (the invoice charges 224 per IDLE, over both banks), and GLOBAL120 adds eight mode calls, for 120 in all.
+- The last FULL on pair k before contact k is stage 2k+1, which matches the chart's B = J1 at contact 0.
+- Every IDLE(p, H) is disjoint from pair p's own FULL stages, and its jobs have rank 8|H|. They are pure private-axis stage Gaussians D_H, with no central part.
 
-Assume the chart's matched type: Y_k carries barJ after contact k. Assume also that the decoder sees Y_k's post-contact value with no correlated saved copy of earlier data. Take U = Y_k's fields after contact k.
+Assume the chart's matched type: Y_k carries a q-conjugated balanced code after contact k. Assume also that the decoder sees Y_k's post-contact value with no correlated saved copy of earlier data. Take U = Y_k's fields after contact k.
 
 The U-projection of the targets is then the decode, of rank 120. By Lemma B, at least 120 paid calls must touch U.
 
-- **Pairs 7..14.** Their suffix IDLE supplies exactly that number. Whether an IDLE can also carry the decode is the open coded-caller IDLE question; counting neither confirms nor excludes it.
-- **Pairs 0..6.** These have no scheduled call on Y_k after contact k. So at least **7·120 = 840 paid calls must be added**, or rerouted from other banks' scheduled work while those calls still meet their own targets.
+- **Pairs 0..6** have no scheduled call on Y_k after contact k. So at least **7·120 = 840 calls must be added**, or rerouted from other banks' scheduled work.
+- **Pairs 7..14** do have a suffix IDLE, which supplies exactly 120 calls on Y_k. The next subsection treats when that IDLE can carry the decode.
 
-Each added call costs at least 1. The C* = 0.00330007 screen admits at most 916 additional rank-1 jobs: the rank-1 tariff is exactly 1, and higher ranks cost more.
+### When can an IDLE carry the decode?
 
-So, unless calls are rerouted, terminating pairs 0..6 alone takes at least **840/916 = 91.7%** of the optimistic allowance. That leaves at most 76 for everything else still open: pair 15's exit, any extra cost of IDLE-borne decodes for pairs 7..14, the mode targets, the endpoints and the 120-wide ABI. Rerouting is not excluded by counting.
+**Lemma D (absorption criterion).** By the balanced-J intertwining (10-BALANCED-J-NATIVE-v1: R_pW = WR_h and R_hZ = ZR_p), J_t commutes with R_t = qD_t. D_t and q act on different axes. Physically, q² = X is the central Pauli X. Then
+
+D_t·barJ_t = D_t q⁻¹J_t q = q⁻² J_t R_t q = (X⁻¹J_tX)·D_t.
+
+So a paid layer containing the code's own stage Gaussian D_t, or a q, turns the q-conjugated exit into an ordinary one, X⁻¹J_t⁻¹X.
+
+A stage Gaussian D_u with u ≠ t acts only on V_u. The stage geometry lists the other axes as unchanged spectators, and stage-t normalizers act on E+V_t. So D_u commutes with those normalizers, with q and with J_t. Hence it commutes with barJ_t.
+
+**Assumption (code chart).** After contact k, the retiring bank's code lives in the chart of the pair's last FULL stage, s = 2k+1, as the chart's nominated matched Gamma(J1) does at contact 0. This is an assumption about the uninstalled 120-wide ABI. What the verifier checks is only that the last FULL before contact k is stage 2k+1.
+
+In the pinned controller, every IDLE(p, H) is disjoint from pair p's own FULL stages; this is checked for all 15. Under the assumption, then, the suffix IDLE of pair k (history {2k+3, …, 32}) applied as scheduled leaves barJ_s intact. IDLE followed by any free post-decoder still carries barJ_s.
+
+**Lemma E (in-sector factoring).** Let S be the private axes of the IDLE's stages. Suppose every non-IDLE operation on fields that carry U-data commutes with D_H; the in-sector condition. Examples:
+- owner mixing, stage-s normalizers, central or own-stage Gaussians, and q-queries all satisfy it;
+- stage-u normalizers or codes for u ∈ H act on E+V_u and do not. These are exactly the "IDLE pre/post codes" that this lineage proposes as its lever, so Lemma E excludes that lever.
+
+Let N be the order of D_H modulo the free monomials. N > 1, since D_H is not monomial. Then:
+- every word factors as D_H^m·w, with w free of IDLE factors and m mod N;
+- by Lemma 1 of encoded-exit-obstructions, different residues give independent components.
+
+The target is D_H·barJ_s⁻¹ and has residue 1. Apply Lemma A to the program in which each IDLE call is replaced by a free grade shift; the group is Γ × Z_N with free part F × Z_N. The q_a⁻¹q_b cosets stay private, so at least **120 non-IDLE paid calls** must touch U.
+
+### Consequences
+
+- **In-sector, under the code-chart assumption.** All 15 retirements need at least 120 non-IDLE calls each on Y_k after contact k, and none is scheduled for any k. So at least **1,800 paid calls must be added**, or rerouted from later contacts or LOCALs of other pairs while those calls still meet their own targets.
+  - Each added call costs at least 1.
+  - The C* = 0.00330007 screen admits at most 916 additional rank-1 jobs, with the paid profile Popt held fixed. The rank-1 tariff is exactly 1, and higher ranks cost more.
+  - **In this sector, the optimistic allowance cannot fund the Gamma termination unless at least 884 existing calls are rerouted, or a changed native FULL or contact places a stage-(2k+1) or central layer after each retirement (Lemma D).**
+- **Without the sector restriction.** Only Lemma B applies, giving at least **840** additional or rerouted calls for pairs 0–6, which is 91.7% of the allowance. The counting does not exclude IDLE pre/post codes or cross-stage re-aiming for pairs 7–14.
+
+Changing Popt itself, for example by splitting existing calls, requires a fresh screen; the 916 allowance does not apply to it.
 
 ## 2. Three fresh stages (odd-E8 negative exit)
 
@@ -112,7 +144,7 @@ v_p = G_{M_p}⁻¹ e0 = G_{3,j}⁻¹ G_{3,d′} G_{2,d′}⁻¹ G_{2,c′} G_{1,
 
 By (S4), two paths from the same input share a coset only if their v_p agree. A base-coset path has v_p = e0.
 
-### Lemma D (private witness)
+### Lemma G (private witness)
 
 For owners d ≠ j, the path p₀: j → d → d → d has v = G_{3,j}⁻¹ q_d^(3). No other path from input j, ending at any output, has the same v.
 

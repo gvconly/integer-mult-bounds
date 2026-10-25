@@ -149,6 +149,30 @@ def controller_retirements():
     return tail, out
 
 
+def idle_structure():
+    """IDLEs supply only stages a pair does not run itself.  For every IDLE(p, H): H is disjoint from pair p's own FULL
+    stages, and its paid jobs are 224 = 2*112 calls of rank 8|H| (pure private-axis stage Gaussians, no central axis).
+    For every contact k the last FULL on pair k before it is stage 2k+1 (the chart's B = J1 at contact 0)."""
+    E = load(CTRL)['physical_events']
+    inv = load(INVOICE)['chronology']
+    full = {}
+    for e in E:
+        if e[0] == 'LOCAL':
+            full.setdefault(e[2], set()).add(e[1])
+    idles = [(i, e) for i, e in enumerate(E) if e[0] == 'IDLE']
+    for i, e in idles:
+        pair, H = e[1], set(e[2])
+        assert not (H & full.get(pair, set()))
+        assert inv[i]['paid'] == {str(8 * len(H)): 2 * NP}
+    last = []
+    for k in range(15):
+        qi = next(i for i, e in enumerate(E) if e[0] == 'QUERY_SHEAR' and e[2] == k)
+        st = [e[1] for e in E[:qi] if e[0] == 'LOCAL' and e[2] == k]
+        last.append(st[-1])
+    assert last == [2 * k + 1 for k in range(15)]
+    return len(idles), {p: sorted(v) for p, v in full.items()}
+
+
 def allowance():
     q = [x for x in load(CSTAR)['quotas'] if x['rank'] == 1][0]
     assert q['additional_paid_tariff']['lower'] == '1' and q['additional_paid_alone']['exact_integer']
@@ -196,6 +220,12 @@ def main(verbose=True):
     res['retirements_without_scheduled_paid_call_on_Yk'] = sum(1 for x in ret if x['scheduled_paid_calls_on_Yk_after_contact'] == 0)
     res['retirements_whose_IDLE_matches_the_count'] = sum(1 for x in ret if x['scheduled_paid_calls_on_Yk_after_contact'] >= need)
     res['forced_new_or_rerouted_calls'] = sum(max(0, need - x['scheduled_paid_calls_on_Yk_after_contact']) for x in ret)
+    n_idle, full = idle_structure()
+    res['idles_disjoint_from_own_FULL_stages'] = n_idle
+    res['last_FULL_before_contact_k_is_stage_2k_plus_1'] = True
+    # PROOF.md Lemma E (in-sector): scheduled IDLE calls act only on other stages' private axes and factor out, so every
+    # retirement needs >= 120 non-IDLE paid calls on Y_k after its contact; none are scheduled for any k.
+    res['in_sector_required_calls_15_retirements'] = 15 * need
     allow, C = allowance()
     res['allowance_rank1_jobs'] = allow
     res['C'] = C

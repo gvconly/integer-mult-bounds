@@ -2,7 +2,7 @@
 
 Two open lines end with the same missing piece: a decoder for a bank whose code has been conjugated by the central Gaussian Q. Each line asks whether a paid decoder fits its budget. This package proves exact lower bounds on the number of paid calls, of any rank, that such a decoder needs.
 
-The counting follows [coded-active-query-bound](../coded-active-query-bound/README.md) and [encoded-exit-obstructions](../encoded-exit-obstructions/README.md). It is stated here in an output-coset form (Lemma A), together with a suffix-projection form (Lemma B). A new path lemma covers three fresh stages (Lemma D).
+The counting follows [coded-active-query-bound](../coded-active-query-bound/README.md) and [encoded-exit-obstructions](../encoded-exit-obstructions/README.md). It is stated here in an output-coset form (Lemma A), together with a suffix-projection form (Lemma B). Two additions are new: an IDLE-commutation analysis (Lemmas D and E) and a path lemma for three fresh stages (Lemma G).
 
 ## Results
 
@@ -11,7 +11,8 @@ The counting follows [coded-active-query-bound](../coded-active-query-bound/READ
 | GLOBAL120 exit q⁻¹J⁻¹q on one 120-field bank | **≥ 120** (240 suffice) | — |
 | GLOBAL120 nominated retirement cut (4)–(5) | **≥ 240** as nominated (C_P or C_I); **≥ 232** if Y0 was decoded earlier | 112-port query bank + 8 mode calls = 120 |
 | GLOBAL120 retirements of pairs 0–6 (no scheduled paid call on Y_k after contact k) | **≥ 840** new calls, or existing calls rerouted from other banks | 916 additional rank-1 jobs at C* = 0.00330007 |
-| GLOBAL120 retirements of pairs 7–14 | ≥ 120 each, met in count by each pair's suffix IDLE (112 main + 8 mode calls) | — |
+| GLOBAL120 retirements of pairs 7–14 | ≥ 120 non-IDLE calls each (in-sector, code-chart assumption); their suffix IDLEs commute with the code | — |
+| GLOBAL120, all 15 retirements (same conditions) | **≥ 1,800**, new or rerouted | 916 |
 | Odd-E8 negative post-decoder J = Q⁻¹E1⁻¹E2E3⁻¹Q | **≥ v = 112³ = 1,404,928** per emitted bank (2v suffice) | — |
 | The same, per port per local call | **≥ 1/3** | margin 0.04382 (exceeded **7.6×**) |
 
@@ -20,7 +21,10 @@ The counting follows [coded-active-query-bound](../coded-active-query-bound/READ
 - The 120 owners' centre lines in the balanced code's normalized chart are pairwise distinct, under all four chart conventions checked. So every output row of the q-conjugated exit has private non-free coset coordinates.
 - **The nominated cut is not buildable from the retained calls.** The exit's coordinates belong only to the retiring bank. The continuing neighbour needs a differently coded contact in the same Q-cosets. The retained 120 calls cannot serve both, so the cut needs at least 112 more.
 - **Pairs 0–6 cost at least 840.** For each contact k, the controller and the neutral literal invoice were checked for paid calls landing on Y_k afterwards. For pairs 0–6 there are none. Lemma B then forces at least 7·120 = 840 new or rerouted paid calls. Unless those calls are rerouted, that is 91.7% of the optimistic allowance, before any other open GLOBAL120 cost.
-- **Pairs 7–14 are open.** Their suffix IDLEs already apply the 120 calls Lemma B requires. Whether an IDLE can also carry the decode is the open coded-caller IDLE question. Counting does not decide it, and it does not exclude rerouting.
+- **Scheduled IDLEs commute with the conjugated code.** A stage Gaussian commutes with a code living in another stage's chart. Only a layer on the code's own stage, or a q, flips the code to an ordinary one: D_t·barJ_t = (X⁻¹J_tX)·D_t (Lemma D).
+- **Every IDLE misses the code's stage.** The verifier checks that every IDLE supplies only stages its pair does not run itself. The package assumes, as the chart does at contact 0, that the retiring code lives in the chart of the pair's last FULL stage, 2k+1. Under that assumption no scheduled IDLE contains the code's stage.
+- **What that forces, in-sector.** Suppose every operation on retired-bank data commutes with the IDLE's Gaussian. Then the IDLE factors out, and each retirement needs at least 120 non-IDLE calls (Lemma E). That totals at least 1,800 additional or rerouted calls, against 916. In that sector, the optimistic allowance cannot fund the Gamma termination unless at least 884 existing calls are rerouted, or a changed native FULL or contact places a stage-(2k+1) or central layer after each retirement.
+- **What remains open.** The in-sector condition excludes the lineage's proposed IDLE pre/post codes in the IDLE stages' charts. Without it, only the 840 for pairs 0–6 is proven, and those codes stay open for pairs 7–14.
 
 ### Odd-E8
 
@@ -38,7 +42,8 @@ The written argument, premises and scope are in [PROOF.md](PROOF.md).
 - **What is not covered.**
   - correlated or pre-return histories (encoded-exit-obstructions prices one such route at 8 H8 against 112 H1);
   - changed targets or contact types;
-  - IDLE-borne decodes;
+  - IDLE pre/post codes in the IDLE stages' charts, and cross-stage re-aiming (outside Lemma E's sector);
+  - changed native FULLs;
   - GLOBAL120 designs that reroute other banks' scheduled paid calls through retired banks.
 - **Not tight.** The bounds are counts, and the elementary decoders use twice as many calls.
 - **No κ claim.** No supplier, κ or selected-result change is claimed.
@@ -66,10 +71,10 @@ Controls:
 
 ## Open next questions
 
-1. **IDLE-borne decodes.** Can an already-paid IDLE carry the q-conjugated decode, for GLOBAL120 pairs 7–14 and for coded callers generally?
-   - Why it matters: counting allows it, and it is the main remaining lever for both lines.
-   - First step: one frozen pair with its suffix IDLE, tested against all-input targets.
-   - Blocked by: the 120-wide RIGHT, endpoint and allocation interface listed in the GLOBAL120 chart.
+1. **Levers outside Lemma E.** Can IDLE pre/post codes in an IDLE stage's chart, or a changed native FULL that defers part of its own-stage Gaussian past the contact, carry the decode without extra paid mass?
+   - Why it matters: these are the GLOBAL120 levers that Lemma E's sector excludes, besides rerouting.
+   - First step: write pair 7's retirement with a stage-17 pre/post code around its suffix IDLE, and test it against all-input targets.
+   - Blocked by: the missing 120-wide RIGHT, endpoint and allocation interface.
 2. **Correlated histories.** Can a correlated or pre-emission copy of the negative bank go below one paid call per owner?
    - First step: price one explicit pre-emission copy route for the odd-E8 bank, with its retained-history invoice.
 3. **Exact complexity.** Where between v and 2v, and between 120 and 240 for one GLOBAL120 bank, does the true count lie? This is the same gap that coded-active-query-bound leaves at 112 and 224.
@@ -81,7 +86,7 @@ Controls:
 - **GLOBAL120.** The chart, controller, invoice and screen come from global120-optimistic-budget. That package credits Ali Romman's controller, Dillon's coupled provider, Chris R's neutral completion and the native and compiler predecessors. The balanced-J native source is credited as in its package.
 - **New here:**
   - the output-coset and suffix-projection forms of the counting lemmas;
-  - the cut and retirement bounds, and the invoice-checked controller audit;
+  - the cut and retirement bounds, the IDLE-commutation analysis, and the invoice-checked controller audit;
   - the three-stage private-witness lemma;
   - the budget comparisons.
 

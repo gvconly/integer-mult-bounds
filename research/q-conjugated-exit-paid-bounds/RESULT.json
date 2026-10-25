@@ -27,6 +27,9 @@
   "distinct_row0_G": 120,
   "forced_new_or_rerouted_calls": 840,
   "forced_share_of_allowance": "210/229",
+  "idles_disjoint_from_own_FULL_stages": 15,
+  "in_sector_required_calls_15_retirements": 1800,
+  "last_FULL_before_contact_k_is_stage_2k_plus_1": true,
   "retirements": [
    {
     "contact": 0,

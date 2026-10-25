@@ -54,7 +54,7 @@
   "scope_status": "changed",
   "actual_scope": "Exact paid-call lower bounds for q-conjugated exits: the GLOBAL120 balanced-J exit, the nominated retirement cut (4)-(5) and the 15 controller retirements (invoice-checked); and the odd-E8 (PR5464/PR5508) negative post-decoder.",
   "scope_change_reason": "The open decoder questions of the GLOBAL120 chart and of the odd-E8/full120 packages ask whether a paid decoder fits their budgets; a paid lower bound answers that directly, while block-rank shape does not.",
-  "bottleneck_link": "Both conditional routes (GLOBAL120 at C*=0.00330007; odd-E8/full120 with a granted negative H73 half) rest on an unpriced q-conjugated decoder. Terminating GLOBAL120 pairs 0-6 alone forces 840 of the 916-job allowance; an odd-E8 post-decoder needs 1/3 per port per local call against a 0.0438 margin.",
+  "bottleneck_link": "Both conditional routes (GLOBAL120 at C*=0.00330007; odd-E8/full120 with a granted negative H73 half) rest on an unpriced q-conjugated decoder. Odd-E8: floor 1/3 against a 0.0438 margin per port per local call. GLOBAL120: 840 forced for pairs 0-6, and 1,800 against 916 if operations on retired data commute with the IDLE Gaussians.",
   "budget_minutes": 240,
   "stop_rule": "Stop after exact source-bound ranks, the controller retirement check, the three-stage witness lemma and the two budget comparisons; no construction search.",
   "outcome": "partial",
@@ -63,9 +63,9 @@
   "ai_assistance": "Substantial Anthropic Claude assistance (analysis, code and drafting) for G. V. Chudnovsky.",
   "open_questions": [
     {
-      "question": "Can an already-paid IDLE carry the q-conjugated decode (GLOBAL120 pairs 7-14, coded callers generally)?",
-      "why_it_matters": "Counting allows it, and it is the main remaining lever for both lines.",
-      "first_step": "One frozen pair with its suffix IDLE tested on all-input targets.",
+      "question": "Can IDLE pre/post codes in an IDLE stage's chart, or a deferred own-stage layer from a changed native FULL, carry the q-conjugated decode of a retiring GLOBAL120 bank without extra paid mass?",
+      "why_it_matters": "These are the levers outside Lemma E's sector. Without them, termination needs at least 1,800 against the 916-job allowance.",
+      "first_step": "Write the pair-7 retirement with a stage-17 pre/post code around its suffix IDLE, and test it against all-input targets.",
       "blocked_by": "The missing 120-wide RIGHT/endpoint/allocation ABI listed in the GLOBAL120 chart."
     },
     {
@@ -81,5 +81,5 @@
       "blocked_by": "None; same gap as coded-active-query-bound's 112-224."
     }
   ],
-  "outcome_note": "Negative for the odd-E8 post-decoder and for the nominated GLOBAL120 cut; for GLOBAL120 retirements a forced 840/916 share for pairs 0-6, with pairs 7-14 (IDLE-borne decodes) left open."
+  "outcome_note": "Odd-E8 post-decoder floor 1/3 per port per local call against a 0.0438 margin. GLOBAL120 nominated cut needs at least 112 extra calls. GLOBAL120 termination forces at least 840 of 916 for pairs 0-6, and at least 1,800 in-sector under the code-chart assumption. IDLE pre/post codes in IDLE-stage charts remain open."
 }
