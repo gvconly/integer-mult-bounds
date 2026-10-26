@@ -60,7 +60,7 @@
     {
       "question": "Can a step that mixes landed contents (or a landed content with first-generation material) ever lower the P104 centre below 56, with root-code or arbitrary contents?",
       "why_it_matters": "By the Collapse theorem mixing is the only multi-generation mechanism not priced by Model C; every mixing-free centre costs at least its collapsed Model C decoder.",
-      "first_step": "In the R_8 = 0 pair-mix designs of PROOF.md section 7 (cost 52, four sign-mismatched ports unserved, standalone repairs cost >= 1 per port), decide whether chained repairs that re-use a repair's landed content can serve the four ports for 3 units; that would be a 55 centre.",
+      "first_step": "In the R_8 = 0 pair-mix designs of PROOF.md section 7 (cost 52, four sign-mismatched ports unserved), single-port chains of total cost 3 are excluded (evidence/repair_shapes.py); decide whether three unit steps serving some port jointly (two steps, neither suiting it alone) can serve all four, which would be a 55 centre.",
       "blocked_by": "Lemma S bounds each delivery by its own ancestry; shared ancestries need a joint potential."
     },
     {

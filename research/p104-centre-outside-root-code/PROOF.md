@@ -220,7 +220,7 @@ CHECKED facts:
 
 RECORDED (`evidence/pairmix.c`): over all 285,653,480 configurations of one mixed rotation replacing two pure ones, none serves every needer. The ten near-solutions are the only single-port failures.
 
-So mixing does save inside a pair, but the saving goes to exactly one sign-mismatched port per pair. Chained repairs, which re-use a repair's landed content, and other mixing patterns (three or more constituents, mixed first deliveries) are not exhausted.
+So mixing does save inside a pair, but the saving goes to exactly one sign-mismatched port per pair. RECORDED (`evidence/repair_shapes.py`, mod 2^61 − 1): no vector of Q^8 suits three of the four ports, and no chain of three unit-step repairs serves them when each port is served by a single repair. Earlier landings may be re-used, in shapes S1, S211 and S2. Not exhausted: a port served jointly by two repairs, and other mixing patterns (three or more constituents, mixed first deliveries).
 
 ## 8. Open
 

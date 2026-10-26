@@ -26,6 +26,7 @@ By transposition, the one-sided version of "contents outside the root code" (arb
   - Four perfect matchings give centres of cost 52 that leave four ports unserved.
   - Standalone repairs cost at least one unit per port, so these designs come back to exactly 56.
   - An exhaustive C search (RECORDED) finds no mixed rotation with zero failures.
+  - No chain of three single-port-serving repairs closes the gap (RECORDED).
 - **Frame counting.** No frame-counting proof of 56 exists. A cost-6 landing frame inside a removed hyperplane meets all 759 live frames, where counting would allow 650.
 
 ## How it is proved
@@ -61,7 +62,7 @@ verify.py reads the word and #2338's `lib/units.py` with its data, and nothing e
 
 ## Open next questions
 
-1. **Mixing.** Can an owned step that combines landed contents ever lower the centre? This is the only multi-generation mechanism Model C does not price. The pair-mix designs of §7 reach 52 + 4 unserved ports. First step: decide whether **chained** repairs, which re-use a repair's landed content, can serve those four ports for 3 units. That would give a 55 centre.
+1. **Mixing.** Can an owned step that combines landed contents ever lower the centre? This is the only multi-generation mechanism Model C does not price. The pair-mix designs of §7 reach 52 + 4 unserved ports. Single-repair chains of total 3 are excluded (RECORDED). First step: decide whether repairs serving a port **jointly** can serve those four ports for 3 units. That would give a 55 centre.
 2. **Case (c) at m = 9** for #968's P104: a square decoder of a rank-9 realisation. First step: classify rank-9 realisations of the pattern with the frame-module theorem (#2338 §3.3) and price the dead sets of their dual bases.
 3. **Case (b) in the shallow profiles** (R_8 ≤ 5, or R_8 = 6 with R_7 ≤ 7). This is the shallow covering problem of the predecessor, now with single-generation prices: every shallow delivery pays its full level. The frame-touch witnesses show that the label-span structure, not frame incidence, must carry the proof.
 4. **Two-sided factors outside the column/row space at m ≥ 10** (case (d)).

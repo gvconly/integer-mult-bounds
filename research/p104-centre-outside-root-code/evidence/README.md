@@ -19,3 +19,17 @@ python3.12 -B research/p104-centre-outside-root-code/evidence/export_mixdata.py 
 gcc -O2 -o /tmp/pairmix research/p104-centre-outside-root-code/evidence/pairmix.c
 (cd /tmp && ./pairmix | tail -1)      # configs 285653480 solutions 0 best 1
 ```
+
+## Chained repairs (`repair_shapes.py`, about 90 s, arithmetic mod 2^61 - 1)
+
+For the four matched pair-mix designs (cost 52, four ports unserved), the script asks whether **three** unit-step repairs can serve those ports, re-using earlier landings.
+
+Recorded result, for all four matchings:
+- no vector of Q^8 suits three of the four ports;
+- every shape in which each port is served by a single repair is impossible: S1, S211 and S2 (definitions in the script) all give 0.
+
+The check lets an earlier step's content range over its whole source space, so it over-approximates and these zeros are sound. Still open: a port served *jointly* by two repairs, neither suiting it alone.
+
+```sh
+python3.12 -B research/p104-centre-outside-root-code/evidence/repair_shapes.py
+```
