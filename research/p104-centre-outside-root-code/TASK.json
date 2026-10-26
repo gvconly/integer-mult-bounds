@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "task_id": "centre-path-sharing",
+  "priority_revision": 7,
+  "base_commit": "6cf7a683f447b9f1e2333791907fd92be5009a63",
+  "original_card": {
+    "id": "centre-path-sharing",
+    "question": "Can the 64-per-call centre path (eight rank-8 COPY/ERASE totals through the private temporary) be shared across calls or shrunk?",
+    "starting_points": [
+      "docs/research/research-family-status.md",
+      "research/complex-local-word-ceiling/README.md",
+      "research/split-centres-global/proofs/PR386-BIT-GEOMETRY.txt",
+      "certificates/selected-result.json"
+    ],
+    "methods": [
+      "Derive a fully charged favorable relaxation for sharing one centre path across k calls, including restoration, hosting and precision.",
+      "Prove a lower bound on copied information per call for the selected decoder contract."
+    ],
+    "acceptance_gate": "Show the changed centre charge and copy profile per call with every added restoration or hosting cost charged, and its ceiling via ceiling.ceiling(centre=...). A scoped local result may be retained without a complete supplier. Expanding it into further construction rounds requires the family-level budget and obligation gate in research-family-status.md; an optimistic passing relaxation alone is not acceptance.",
+    "first_step": {
+      "command": [
+        "python3",
+        "-B",
+        "research/complex-local-word-ceiling/verify.py"
+      ],
+      "expected": "PASS_COMPLEX_LOCAL_WORD_CEILING",
+      "inspect": "Read the selected word's per-call local profile, its packing ceiling and the lever table; run levers.py for the ideal budget of the lever you target.",
+      "scope": "Positive control and planning budget only; this is not a new construction or full cold replay."
+    },
+    "first_experiment": "Write the per-call centre charge and copy children for sharing across k = 2 calls, charge the sharing overhead, and screen it; stop this route if even the ideal sharing gains under 10%. Ideal budgets: free 2.80x, shared by two 1.90x (levers.py).",
+    "bottleneck_link": "The centre path consumes 64 of about 99.6 unpaid coordinates per call, i.e. about 64% of the raw deficit.",
+    "allowed_variations": [
+      "One sharing pattern across a fixed number of calls.",
+      "One reduced copied-total contract for the existing decoder.",
+      "If the coverage law, template or guard changes, derive an applicable fully charged replacement bound instead of applying the incumbent ceiling outside its scope."
+    ],
+    "scope_change_triggers": [
+      "Removing copies without a replacement contract for the decoder's copied totals.",
+      "Continuing a partial cost improvement while leaving the same unpriced consumer, restoration or central-readout obligation unresolved; refresh the family expansion decision first. Local product-retiming evidence has a narrow scope and is not a ban on changed graphs or contracts."
+    ],
+    "overlap_terms": [
+      "centre path",
+      "copied totals",
+      "private temporary",
+      "shared centre",
+      "batching"
+    ]
+  },
+  "scope_status": "changed",
+  "actual_scope": "Lower bounds and reductions for the P104 centre (owned descent mass per FULL, 56 in the word) when centre contents are arbitrary vectors (not root-code), multi-generation descents allowed: a per-content ancestry bound (Lemma S), a Collapse theorem reducing every mixing-free centre to a Model C decoder, the resulting floors via the Model C results for #968's unit, and exact evidence on truncated and overcomplete contents.",
+  "scope_change_reason": "The P104 centre is 56 per FULL; research/p104-multigen-centre-floor bounded it for root-code contents. This package removes the root-code hypothesis and locates exactly where a cheaper centre would have to live.",
+  "bottleneck_link": "The owned centre is 56 units of the P104 word's paid mass per FULL; single-generation decoder floors cover it only for root-code factors or few terms, and no prior result priced multi-generation descents with arbitrary contents.",
+  "budget_minutes": 240,
+  "stop_rule": "Stop after the Collapse theorem with its P104 consequences, exact controls on the existing designs and recorded evidence (truncation, overcomplete removed-root directions, frame counting); no proof attempt of Model C cases (b)-(d) beyond that.",
+  "outcome": "partial",
+  "evidence": "PROOF.md; verify.py (common.py, checks.py); RESULT.json",
+  "author": "G. V. Chudnovsky",
+  "ai_assistance": "Substantial Anthropic Claude assistance (analysis, code and drafting) for G. V. Chudnovsky.",
+  "open_questions": [
+    {
+      "question": "Can a step that mixes landed contents (or a landed content with first-generation material) ever lower the P104 centre below 56, with root-code or arbitrary contents?",
+      "why_it_matters": "By the Collapse theorem mixing is the only multi-generation mechanism not priced by Model C; every mixing-free centre costs at least its collapsed Model C decoder.",
+      "first_step": "Price the root-code mixing designs of the open profiles of research/p104-multigen-centre-floor (shallow covering problem) with Lemma S per delivery, starting from the four coupled pairs of its control.",
+      "blocked_by": "Lemma S bounds each delivery by its own ancestry; shared ancestries need a joint potential."
+    },
+    {
+      "question": "Is #968's P104 Model C case (c) at m = 9 (square decoder of a rank-9 realisation) at least 56, and is case (b) at m >= 10 in the shallow profiles (R_8 <= 5, or R_8 = 6 with R_7 <= 7) and case (d) at least 56?",
+      "why_it_matters": "A mixing-free centre below 56 must have its collapsed decoder in one of these classes, with at least nine pairwise non-proportional paid first-generation contents.",
+      "first_step": "Case (c): classify rank-9 realisations of the P104 pattern with the frame-module theorem of decoder-floors-frontier-format section 3.3 and price the dead sets of their dual bases.",
+      "blocked_by": "Frame incidence alone cannot prove 56 (landing frames inside removed hyperplanes meet more frames per unit cost than the frame-pair); the label-span structure must enter."
+    }
+  ],
+  "outcome_note": "Any P104 centre of cost at most 55, whatever its contents, must either mix landed contents in an owned descent or have at least nine pairwise non-proportional paid first-generation contents whose collapsed Model C decoder lies in an open class (case (c) at m = 9, or a factor outside the column/row space at m >= 10). One-sided decoders (root-code columns, or by transposition root-code coefficients with arbitrary contents) cost at least 56 at every m in the deep profiles R_8 >= 7 or (R_8, R_7) = (6, 8). Truncated frame-pair contents break all 52 users, and in the overcomplete removed-root family the frame-pair is a strict local optimum."
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "status": "ready",
+  "python": "3.12",
+  "requirements": [],
+  "inputs": [
+    "research/p104-productive-controller/WORD.json.gz",
+    "research/decoder-floors-frontier-format/lib/units.py",
+    "research/decoder-floors-frontier-format/lib/roots.py",
+    "research/decoder-floors-frontier-format/data/h4_F1.json",
+    "research/decoder-floors-frontier-format/data/p104reps.json"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "{python}",
+        "-I",
+        "-B",
+        "{package}/verify.py"
+      ],
+      "timeout_seconds": 600,
+      "checks": "word replay of the eight owned centre lifetimes and the integral E8 realisation; linear isometry of the word unit onto #968 P104 = E8 - F0 - H4 (decoder-floors-frontier-format units.py); Collapse controls: selected centre and the R_8 = 0 all-planes centre collapse to Model C decoders of cost 56 with tight Union bounds (supports, copy frames and plane geometry asserted); random pure classes (Union lemma) and random mixing ancestries (all three inequalities of Lemma S), exact; mixing gap (centre 15, best natural Model C decoders 16, term-by-term 23); truncation census (1,016 truncations, each leaves all 52 users unserved); removed-root overcomplete family (524 single-port changes from the frame-pair all cost >= 57); frame-touch witnesses (levels 7, 6, 5); every priced block cross-checked by direct F2 elimination; RESULT.json equality"
+    }
+  ]
+}

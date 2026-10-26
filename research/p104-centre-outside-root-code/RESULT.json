@@ -1,0 +1,172 @@
+{
+ "centre": {
+  "cost": 56,
+  "gram_det": 1,
+  "owned_lifetimes": 8,
+  "ports": 104,
+  "removed_lines": 16
+ },
+ "collapse_all_planes": {
+  "centre_cost": 56,
+  "classes": 8,
+  "collapsed_cost": 56,
+  "model_C_costs": [
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7
+  ],
+  "steps": [
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7
+  ],
+  "union_bounds": [
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7
+  ]
+ },
+ "collapse_selected": {
+  "centre_cost": 56,
+  "classes": 8,
+  "collapsed_cost": 56,
+  "model_C_costs": [
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7
+  ],
+  "steps": [
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7
+  ],
+  "union_bounds": [
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7
+  ]
+ },
+ "frame_touch_witnesses": [
+  {
+   "cost": 6,
+   "counting_allowance": 650.57,
+   "frames_met": 759,
+   "level": 7,
+   "world_size": 32
+  },
+  {
+   "cost": 5,
+   "counting_allowance": 542.14,
+   "frames_met": 699,
+   "level": 6,
+   "world_size": 19
+  },
+  {
+   "cost": 4,
+   "counting_allowance": 433.71,
+   "frames_met": 542,
+   "level": 5,
+   "world_size": 11
+  }
+ ],
+ "isometry_with_968": {
+  "image_of_x_basis_is_removed": true,
+  "live_lines_matched": 104,
+  "removed_lines_matched": 16
+ },
+ "lemma_s_random": {
+  "attempted": 3000,
+  "min_slack_ancestry_minus_rank": 0,
+  "tested": 2827
+ },
+ "live_frames": 759,
+ "mixing_gap": {
+  "best_natural_model_C_decoder": 16,
+  "centre_cost": 15,
+  "example": {
+   "alternatives": [
+    16,
+    16
+   ],
+   "contents": [
+    0,
+    1
+   ],
+   "line": 1,
+   "world_size": 56
+  },
+  "lemma_S_price_of_sum": 9,
+  "pairs_and_lines": 3556,
+  "term_by_term_model_C": 23
+ },
+ "removed_direction_family": {
+  "frame_pair_cost": 56,
+  "min_cost_after_one_move": 57,
+  "options": "every minimal spanning set of removed roots of size <= 4, plus the frame-pair support",
+  "options_total": 628,
+  "ports_by_min_spanning_size": {
+   "2": 32,
+   "3": 48,
+   "4": 24
+  },
+  "single_port_moves": 524
+ },
+ "truncation_census": {
+  "min_broken_ports_per_content": [
+   52,
+   52,
+   52,
+   52,
+   52,
+   52,
+   52,
+   52
+  ],
+  "truncations_tested": 1016,
+  "users_per_content": [
+   52,
+   52,
+   52,
+   52,
+   52,
+   52,
+   52,
+   52
+  ]
+ },
+ "union_lemma_random": {
+  "attempted": 3000,
+  "min_slack_steps_minus_rank": 0,
+  "tested": 2584
+ }
+}
