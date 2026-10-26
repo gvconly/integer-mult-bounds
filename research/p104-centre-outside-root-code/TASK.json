@@ -60,7 +60,7 @@
     {
       "question": "Can a step that mixes landed contents (or a landed content with first-generation material) ever lower the P104 centre below 56, with root-code or arbitrary contents?",
       "why_it_matters": "By the Collapse theorem mixing is the only multi-generation mechanism not priced by Model C; every mixing-free centre costs at least its collapsed Model C decoder.",
-      "first_step": "Price the root-code mixing designs of the open profiles of research/p104-multigen-centre-floor (shallow covering problem) with Lemma S per delivery, starting from the four coupled pairs of its control.",
+      "first_step": "In the R_8 = 0 pair-mix designs of PROOF.md section 7 (cost 52, four sign-mismatched ports unserved, standalone repairs cost >= 1 per port), decide whether chained repairs that re-use a repair's landed content can serve the four ports for 3 units; that would be a 55 centre.",
       "blocked_by": "Lemma S bounds each delivery by its own ancestry; shared ancestries need a joint potential."
     },
     {
@@ -70,5 +70,5 @@
       "blocked_by": "Frame incidence alone cannot prove 56 (landing frames inside removed hyperplanes meet more frames per unit cost than the frame-pair); the label-span structure must enter."
     }
   ],
-  "outcome_note": "Any P104 centre of cost at most 55, whatever its contents, must either mix landed contents in an owned descent or have at least nine pairwise non-proportional paid first-generation contents whose collapsed Model C decoder lies in an open class (case (c) at m = 9, or a factor outside the column/row space at m >= 10). One-sided decoders (root-code columns, or by transposition root-code coefficients with arbitrary contents) cost at least 56 at every m in the deep profiles R_8 >= 7 or (R_8, R_7) = (6, 8). Truncated frame-pair contents break all 52 users, and in the overcomplete removed-root family the frame-pair is a strict local optimum."
+  "outcome_note": "Any P104 centre of cost at most 55, whatever its contents, must either mix landed contents in an owned descent or have at least nine pairwise non-proportional paid first-generation contents whose collapsed Model C decoder lies in an open class (case (c) at m = 9, or a factor outside the column/row space at m >= 10). One-sided decoders (root-code columns, or by transposition root-code coefficients with arbitrary contents) cost at least 56 at every m in the deep profiles R_8 >= 7 or (R_8, R_7) = (6, 8). Truncated frame-pair contents break all 52 users, and in the overcomplete removed-root family the frame-pair is a strict local optimum. In the all-planes family, one mixed rotation replaces two pure ones for ten direction pairs up to one sign-mismatched port each; the matched designs cost 52 plus at least 4 standalone repair units, i.e. 56."
 }

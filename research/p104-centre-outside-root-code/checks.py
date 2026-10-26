@@ -475,3 +475,144 @@ def frame_touch(G, frames):
         out.append({'level': level, 'cost': cost, 'world_size': len(W), 'frames_met': tau,
                     'counting_allowance': round(759 * cost / 7, 2)})
     return out
+
+
+# ---------------------------------------------------------------- evidence 4: mixing in the R_8 = 0 profile
+
+# (j, k, l, a, b): P_j = <l, a>, P_k = <l, b>, mixed rotation plane Pq = <a, b> (the frame-pair lines g_j = a, g_k = b)
+MIX_NEAR = [(0, 5, 56, 7, 448), (0, 6, 443, 7, 67), (1, 4, 13, 25, 491), (1, 5, 38, 25, 448), (1, 7, 367, 25, 137),
+            (2, 6, 392, 52, 67), (2, 7, 322, 52, 137), (3, 4, 70, 82, 491), (3, 6, 494, 82, 67), (3, 7, 292, 82, 137)]
+
+
+def _planes_in(vs):
+    vs = sorted(set(v for v in vs if v))
+    out = set()
+    for i, a in enumerate(vs):
+        for b in vs[i + 1:]:
+            out.add(tuple(sorted((a, b, a ^ b))))
+    return sorted(out)
+
+
+def _qbasis(vs):
+    out = []
+    for v in vs:
+        if _qrank(out + [v]) > len(out):
+            out.append(list(v))
+    return out
+
+
+def _qintersect(A, B):
+    """basis of span(A) cap span(B) in Q^8 (exact)."""
+    if not A or not B:
+        return []
+    M = [list(a) for a in A] + [[-x for x in b] for b in B]
+    n = len(M)
+    rows = [[Fr(M[i][c]) for i in range(n)] for c in range(8)]
+    piv, r = [], 0
+    for c in range(n):
+        p = next((i for i in range(r, 8) if rows[i][c] != 0), None)
+        if p is None:
+            continue
+        rows[r], rows[p] = rows[p], rows[r]
+        pv = rows[r][c]
+        rows[r] = [x / pv for x in rows[r]]
+        for i in range(8):
+            if i != r and rows[i][c] != 0:
+                f = rows[i][c]
+                rows[i] = [a - f * b for a, b in zip(rows[i], rows[r])]
+        piv.append(c)
+        r += 1
+    vecs = []
+    for fcol in (c for c in range(n) if c not in piv):
+        v = [Fr(0)] * n
+        v[fcol] = Fr(1)
+        for i, c in enumerate(piv):
+            v[c] = -rows[i][fcol]
+        vecs.append([sum(v[i] * A[i][d] for i in range(len(A))) for d in range(8)])
+    return _qbasis(vecs)
+
+
+def mixing_census(G):
+    """R_8 = 0 centres: x_j lands on a plane P_j inside h_j^perp (6 steps), rotations cost 1 (a plane inside a 3-dim frame
+    holding the landed planes of the contents it combines).  Checks (exact):
+      * a plane inside h_j^perp sees at most 30 of the 52 needers of x_j (any plane: 32);
+      * the ten near-solutions: one mixed rotation e_j +- e_k at <g_j, g_k> serves all needers of x_j and x_k except one
+        sign-mismatched double misser;
+      * the four perfect matchings of these pairs give centres of cost 48 + 4 = 52 serving every port but four;
+      * standalone repairs (source frame = a sum of landed planes, cheapest target, any admissible content) fix at most
+        two of the four ports, and two only at cost 2: so every matched design needs >= 4 more units (56)."""
+    P, Q = G.P, G.Q
+    pm = [sum(1 << t for t in range(P) if par(Q[t] & w) == 0) for w in range(512)]
+    W = lambda pl: pm[pl[0]] & pm[pl[1]]
+    roots = [tuple(int(c) for c in r) for r in G.roots]
+    need = [sum(1 << t for t in range(P) if roots[t][j]) for j in range(8)]
+    h = [G.label(unit(j)) for j in range(8)]
+    g = [L['landing'][0] for L in G.lives]
+    allpl = _planes_in(range(512))
+    assert len(allpl) == 43435
+    seen_in, seen_any = [], []
+    for j in range(8):
+        inside = _planes_in([w for w in range(512) if par(w & h[j]) == 0])
+        assert len(inside) == 10795
+        seen_in.append(max((W(p) & need[j]).bit_count() for p in inside))
+        seen_any.append(max((W(p) & need[j]).bit_count() for p in allpl))
+    assert seen_in == [30] * 8 and seen_any == [32] * 8
+    pl = lambda x, y: tuple(sorted((x, y, x ^ y)))
+    near = {}
+    for (j, k, l, a, b) in MIX_NEAR:
+        assert a == g[j] and b == g[k]
+        Pj, Pk, Pq = pl(l, a), pl(l, b), pl(a, b)
+        assert all(par(v & h[j]) == 0 for v in Pj) and all(par(v & h[k]) == 0 for v in Pk)
+        Mj, Mk = need[j] & ~W(Pj), need[k] & ~W(Pk)
+        Wq = W(Pq)
+        assert Mj == Mk and Mj.bit_count() == 28 and Mj & ~Wq == 0
+        D = [t for t in range(P) if Mj >> t & 1]
+        ratios = {}
+        for t in D:
+            ratios.setdefault(Fr(roots[t][j], roots[t][k]), []).append(t)
+        assert sorted(len(v) for v in ratios.values()) == [1, 27]
+        main = next(r for r, v in ratios.items() if len(v) == 27)
+        badp = next(v[0] for v in ratios.values() if len(v) == 1)
+        near[(j, k)] = (Pj, Pk, Pq, main, badp)
+    matchings = [c for c in combinations(sorted(near), 4) if len({x for e in c for x in e}) == 8]
+    assert len(matchings) == 4
+    out = []
+    for M in matchings:
+        landed = []
+        for (j, k) in M:
+            Pj, Pk, Pq, main, _ = near[(j, k)]
+            landed += [(Pj, [Fr(int(i == j)) for i in range(8)]), (Pk, [Fr(int(i == k)) for i in range(8)])]
+            v = [Fr(0)] * 8
+            v[j], v[k] = Fr(main.numerator), Fr(main.denominator)
+            landed.append((Pq, v))
+        S = [_qbasis([v for (p, v) in landed if W(p) >> t & 1]) for t in range(P)]
+        bad = [t for t in range(P) if _qrank(S[t] + [list(roots[t])]) > len(S[t])]
+        assert sorted(bad) == sorted(near[e][4] for e in M)
+        best, frames = {}, set()
+        for r in range(1, len(landed) + 1):
+            for sub in combinations(range(len(landed)), r):
+                Xb = f2span([x for i in sub for x in landed[i][0]])
+                key = frozenset(span_elems(Xb))
+                if key in frames:
+                    continue
+                frames.add(key)
+                C = _qbasis([v for (p, v) in landed if set(p) <= key])
+                for nb in range(1, 5):
+                    for B in combinations(bad, nb):
+                        Yb = f2span([e for e in key if all(par(e & Q[t]) == 0 for t in B)])
+                        cost = len(Xb) - len(Yb)
+                        if nb in best and best[nb] <= cost:
+                            continue
+                        A = C
+                        for t in B:
+                            A = _qintersect(A, S[t] + [list(roots[t])])
+                            if not A:
+                                break
+                        if A and all(_qrank(S[t] + A) > len(S[t]) for t in B):
+                            best[nb] = cost
+        assert 3 not in best and 4 not in best and best.get(1) == 1 and best.get(2, 2) == 2
+        out.append({'pairs': [list(e) for e in M], 'cost_before_repairs': 52, 'unserved_ports': sorted(bad),
+                    'source_frames': len(frames), 'cheapest_repair_by_ports_fixed': {str(k): v for k, v in sorted(best.items())}})
+    return {'needers_seen_by_one_plane': {'inside_copy_frame': 30, 'any_plane': 32, 'needers': 52},
+            'near_solutions': [[j, k] for (j, k, *_r) in MIX_NEAR], 'double_missers_per_pair': 28,
+            'sign_mismatched_ports_per_pair': 1, 'matched_designs': out}

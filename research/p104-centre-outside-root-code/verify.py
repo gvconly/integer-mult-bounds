@@ -14,7 +14,9 @@ Checks (PROOF.md):
   * the mixing gap: a two-content mixing centre that Model C prices higher than the centre pays;
   * evidence: every single truncation of a frame-pair content breaks all of its users; in the overcomplete family
     with removed-root directions the frame-pair has no improving single-port change; landing frames whose worlds meet
-    more frames than a frame-counting proof of 56 allows."""
+    more frames than a frame-counting proof of 56 allows;
+  * mixing in the R_8 = 0 profile: the ten one-port near-solutions of a mixed rotation replacing two pure ones, the four
+    matched designs of cost 52 with four unserved ports, and the standalone repair costs that bring them back to 56."""
 import json
 import sys
 from pathlib import Path
@@ -63,6 +65,7 @@ def main():
     assert len(frames) == 759
     res['live_frames'] = len(frames)
     res['frame_touch_witnesses'] = checks.frame_touch(G, frames)
+    res['mixing_census'] = checks.mixing_census(G)
     path = HERE / 'RESULT.json'
     text = json.dumps(res, indent=1, sort_keys=True) + '\n'
     if '--write' in sys.argv:

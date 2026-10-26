@@ -22,6 +22,10 @@ By transposition, the one-sided version of "contents outside the root code" (arb
 **Evidence** (exact, not proofs):
 - **Truncation.** Truncating a frame-pair content to a 7-dimensional subframe saves one unit. All 1,016 such truncations leave all 52 users of that content without a clean vector, even with every combination re-solved.
 - **Overcomplete removed-root directions.** With the 16 removed roots as directions and any minimal spanning set of size ≤ 4 per port, the frame-pair is a strict local optimum in that neighbourhood: all 524 single-port changes cost ≥ 57.
+- **Mixing near-misses.** In the all-planes family (R_8 = 0), one mixed rotation e_j ± e_k can replace two pure rotations for ten direction pairs, except for exactly one sign-mismatched port each.
+  - Four perfect matchings give centres of cost 52 that leave four ports unserved.
+  - Standalone repairs cost at least one unit per port, so these designs come back to exactly 56.
+  - An exhaustive C search (RECORDED) finds no mixed rotation with zero failures.
 - **Frame counting.** No frame-counting proof of 56 exists. A cost-6 landing frame inside a removed hyperplane meets all 759 live frames, where counting would allow 650.
 
 ## How it is proved
@@ -57,7 +61,7 @@ verify.py reads the word and #2338's `lib/units.py` with its data, and nothing e
 
 ## Open next questions
 
-1. **Mixing.** Can an owned step that combines landed contents ever lower the centre? This is the only multi-generation mechanism Model C does not price. First step: price the coupled-pair designs with Lemma S per delivery.
+1. **Mixing.** Can an owned step that combines landed contents ever lower the centre? This is the only multi-generation mechanism Model C does not price. The pair-mix designs of §7 reach 52 + 4 unserved ports. First step: decide whether **chained** repairs, which re-use a repair's landed content, can serve those four ports for 3 units. That would give a 55 centre.
 2. **Case (c) at m = 9** for #968's P104: a square decoder of a rank-9 realisation. First step: classify rank-9 realisations of the pattern with the frame-module theorem (#2338 §3.3) and price the dead sets of their dual bases.
 3. **Case (b) in the shallow profiles** (R_8 ≤ 5, or R_8 = 6 with R_7 ≤ 7). This is the shallow covering problem of the predecessor, now with single-generation prices: every shallow delivery pays its full level. The frame-touch witnesses show that the label-span structure, not frame incidence, must carry the proof.
 4. **Two-sided factors outside the column/row space at m ≥ 10** (case (d)).

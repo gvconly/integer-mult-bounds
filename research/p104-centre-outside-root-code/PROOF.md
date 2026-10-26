@@ -201,9 +201,30 @@ So in this fragment mixing pays one unit less than the best Model C alternative 
 
 The three witnesses are fixed in `checks.FRAME_TOUCH_WITNESSES` and checked exactly. A scratch census in C over all 8.3 M subspaces of F2^9 found them; it is not shipped and not needed for the claim. Any proof for one-sided or general contents must use the span structure, not frame incidence alone.
 
+**Mixing in the R_8 = 0 profile.** Take the family of the predecessor's all-planes control:
+- each x_j lands on a plane P_j inside h_j^⊥ (6 steps, 48 in all);
+- each rotation costs 1: a plane inside a 3-dimensional frame that holds the landed planes of the contents it combines.
+
+The control uses eight pure rotations (56). A **mixed** rotation carries e_j ± e_k.
+
+CHECKED facts:
+1. A plane inside h_j^⊥ sees at most 30 of the 52 needers of x_j (any plane: 32). So every direction leaves at least 22 needers to rotations.
+2. **Ten near-solutions.** For the pairs (0,5), (0,6), (1,4), (1,5), (1,7), (2,6), (2,7), (3,4), (3,6), (3,7) there is a configuration:
+   - P_j = ⟨l, g_j⟩ and P_k = ⟨l, g_k⟩ for a common vector l, with the rotation plane ⟨g_j, g_k⟩ built on the frame-pair landing lines;
+   - both directions miss the same 28 needers, which all see the rotation plane;
+   - 27 of them have one ratio r_j : r_k = ±1 and one has the opposite sign.
+
+   So one mixed rotation serves both directions except for a single port.
+3. These pairs contain **four perfect matchings**. Each gives a centre of cost 48 + 4 = 52. The pairs act on disjoint coordinates, so every port is served except the four sign-mismatched ones.
+4. **Standalone repairs.** A repair has a source frame X that is a sum of landed planes, its cheapest target X ∩ q_B^⊥ (cost = the pairing rank between X and the labels of the ports B it serves), and any admissible content. Such repairs serve at most two of the four ports, and two only at cost 2. Each matched design therefore needs four more units: **56 again**.
+
+RECORDED (`evidence/pairmix.c`): over all 285,653,480 configurations of one mixed rotation replacing two pure ones, none serves every needer. The ten near-solutions are the only single-port failures.
+
+So mixing does save inside a pair, but the saving goes to exactly one sign-mismatched port per pair. Chained repairs, which re-use a repair's landed content, and other mixing patterns (three or more constituents, mixed first deliveries) are not exhausted.
+
 ## 8. Open
 
-- **Mixing**, with any contents. This is the one multi-generation mechanism Model C does not price.
+- **Mixing**, with any contents. This is the one multi-generation mechanism Model C does not price. In the R_8 = 0 profile, every pair-mix design examined costs exactly 56 (§7).
 - **Case (c) at m = 9** for #968's P104: the rank-9 square decoder. The frame-module theorem of #2338 §3.3 is the available tool.
 - **m ≥ 10 with a factor outside the column/row space.**
   - The one-sided case (b) remains open only in the shallow profiles of Corollary 4: R_8 ≤ 5, or R_8 = 6 with R_7 ≤ 7. This is the shallow covering problem of research/p104-multigen-centre-floor, now with single-generation prices.

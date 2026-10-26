@@ -110,6 +110,186 @@
   "tested": 2827
  },
  "live_frames": 759,
+ "mixing_census": {
+  "double_missers_per_pair": 28,
+  "matched_designs": [
+   {
+    "cheapest_repair_by_ports_fixed": {
+     "1": 1
+    },
+    "cost_before_repairs": 52,
+    "pairs": [
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      6
+     ],
+     [
+      3,
+      7
+     ]
+    ],
+    "source_frames": 270,
+    "unserved_ports": [
+     5,
+     48,
+     52,
+     60
+    ]
+   },
+   {
+    "cheapest_repair_by_ports_fixed": {
+     "1": 1,
+     "2": 2
+    },
+    "cost_before_repairs": 52,
+    "pairs": [
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      7
+     ],
+     [
+      3,
+      6
+     ]
+    ],
+    "source_frames": 270,
+    "unserved_ports": [
+     5,
+     37,
+     52,
+     73
+    ]
+   },
+   {
+    "cheapest_repair_by_ports_fixed": {
+     "1": 1,
+     "2": 2
+    },
+    "cost_before_repairs": 52,
+    "pairs": [
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      7
+     ],
+     [
+      2,
+      6
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "source_frames": 270,
+    "unserved_ports": [
+     25,
+     52,
+     60,
+     97
+    ]
+   },
+   {
+    "cheapest_repair_by_ports_fixed": {
+     "1": 1,
+     "2": 2
+    },
+    "cost_before_repairs": 52,
+    "pairs": [
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      7
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "source_frames": 270,
+    "unserved_ports": [
+     24,
+     25,
+     37,
+     87
+    ]
+   }
+  ],
+  "near_solutions": [
+   [
+    0,
+    5
+   ],
+   [
+    0,
+    6
+   ],
+   [
+    1,
+    4
+   ],
+   [
+    1,
+    5
+   ],
+   [
+    1,
+    7
+   ],
+   [
+    2,
+    6
+   ],
+   [
+    2,
+    7
+   ],
+   [
+    3,
+    4
+   ],
+   [
+    3,
+    6
+   ],
+   [
+    3,
+    7
+   ]
+  ],
+  "needers_seen_by_one_plane": {
+   "any_plane": 32,
+   "inside_copy_frame": 30,
+   "needers": 52
+  },
+  "sign_mismatched_ports_per_pair": 1
+ },
  "mixing_gap": {
   "best_natural_model_C_decoder": 16,
   "centre_cost": 15,
